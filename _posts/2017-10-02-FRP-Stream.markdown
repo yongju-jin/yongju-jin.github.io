@@ -7,8 +7,13 @@ categories: FRP
 comments: true
 tag: [FRP, Rx]
 ---
+함수형 반응형 프로그래밍: FRP 입문자를 위한 종합 안내서.
 
-# 2.FRP의 핵심
+2장의 내용을 정리한 자료 입니다.
+
+------
+
+# 2. FRP의 핵심
 
 ### 1. 스트림 타입: 이벤트의 흐름
 
@@ -178,5 +183,7 @@ example 2.
 markdown 어렵네요 ㅠ
 
 ## *참조 link*
+
 [The introduction to Reactive Programming you've been missing](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754)   
+
 [Reactive Programming](https://brunch.co.kr/@oemilk/79)
