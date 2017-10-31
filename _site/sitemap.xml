@@ -2,6 +2,21 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
     <url>
+      <loc>http://yong-ju.github.io/review/2017/10/31/book-review-mentor.html</loc>
+      
+        <lastmod>2017-10-31T06:56:59+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
       <loc>http://yong-ju.github.io/frp/2017/10/03/FRP-Stream.html</loc>
       
         <lastmod>2017-10-03T06:56:59+09:00</lastmod>
