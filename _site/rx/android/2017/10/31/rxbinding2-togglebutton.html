@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>프로그래머의 길, 멘토에게 묻다</title>
-  <meta name="description" content="프로그래머의 길, 멘토에게 묻다">
+  <title>[RxBinding2] ToggleButton에서 on/off Observable 생성하기.</title>
+  <meta name="description" content="[RxBinding2] ToggleButton에서 on/off Observable 생성하기.">
   
   <meta name="author" content="Yongju Jin">
   <meta name="copyright" content="&copy; Yongju Jin 2017">
@@ -41,10 +41,10 @@
 
   
   <!-- Facebook OGP cards -->
-  <meta property="og:description" content="프로그래머의 길, 멘토에게 묻다" />
+  <meta property="og:description" content="[RxBinding2] ToggleButton에서 on/off Observable 생성하기." />
   <meta property="og:url" content="http://yong-ju.github.io" />
   <meta property="og:site_name" content="Yongju Blog" />
-  <meta property="og:title" content="프로그래머의 길, 멘토에게 묻다" />
+  <meta property="og:title" content="[RxBinding2] ToggleButton에서 on/off Observable 생성하기." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="http://yong-ju.github.io/assets/logo.png" />
   <meta property="og:image:type" content="image/png" />
@@ -55,8 +55,8 @@
   
   <!-- Twitter: card tags -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="프로그래머의 길, 멘토에게 묻다">
-  <meta name="twitter:description" content="프로그래머의 길, 멘토에게 묻다">
+  <meta name="twitter:title" content="[RxBinding2] ToggleButton에서 on/off Observable 생성하기.">
+  <meta name="twitter:description" content="[RxBinding2] ToggleButton에서 on/off Observable 생성하기.">
   <meta name="twitter:image" content="http://yong-ju.github.io/assets/logo.png">
   <meta name="twitter:url" content="http://yong-ju.github.io">
   
@@ -65,7 +65,7 @@
 
   <!-- Site styles -->
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://yong-ju.github.io/review/2017/10/31/book-review-mentor.html">
+  <link rel="canonical" href="http://yong-ju.github.io/rx/android/2017/10/31/rxbinding2-togglebutton.html">
   <link rel="alternate" type="application/rss+xml" title="Yongju Blog" href="http://yong-ju.github.io/feed.xml" />
 </head>
 
@@ -131,7 +131,7 @@
 <div class="post-header-container " >
   <div class="scrim ">
     <header class="post-header">
-      <h1 class="title">프로그래머의 길, 멘토에게 묻다</h1>
+      <h1 class="title">[RxBinding2] ToggleButton에서 on/off Observable 생성하기.</h1>
       <p class="info">by <strong>Yongju Jin</strong></p>
     </header>
   </div>
@@ -150,33 +150,100 @@
   <div class="post-categories">
   in 
     
-    <a href="/category/review">Review</a>
+    <a href="/category/Rx">Rx</a>, 
+    
+  
+    
+    <a href="/category/Android">Android</a>
     
   
   </div>
 </section>
 
 <article class="post-content">
-  <h1 id="section">프로그래머의 길, 멘토에게 묻다</h1>
+  <h1 id="rxbinding2-togglebutton-onoff-observable-">[RxBinding2] ToggleButton에서 on/off Observable 생성하기.</h1>
 
-<p>내가 이 책을  알게되고 접하게 된건 facebook에 있는 책 추천 글을 보고 나서다. 내 facebook은 여러 개발자 분들을 팔로우 하고 있는데(sns를 하지 않기 때문에 친구는 거의 없고 여러 개발자, 그룹 글들이 거의 대부분),  그 중 한 분께서 추천하는 도서에 대한 글을 보고 알게 되었다.</p>
+<p>toggle button 에서 on/off Observabel을 분리하기 위해서 아래와 같이 하면</p>
 
-<p>사실 난 이런 류(너가 잘되기 위해서는 이렇게 저렇게 해야해라는 식)의 책을 좋아하지 않는다. 다 비슷한 내용이고 결국 실제로 행동이 더 중요하다고 생각했기 때문에, 이런 류의 책을 읽는 시간에 다른 책을 읽는게 더 좋다고 생각했었다.(사실 그렇다고 다른 책을 읽는 것도 아니지만)</p>
+<div class="language-kotlin highlighter-rouge"><pre class="highlight"><code><span class="kd">val</span> <span class="py">obFuel1</span> <span class="p">=</span> <span class="n">tb_fuel1</span><span class="p">.</span><span class="n">checkedChanges</span><span class="p">()</span>
+<span class="n">obFuel1</span><span class="p">.</span><span class="n">filter</span> <span class="p">{</span>
+  <span class="n">Log</span><span class="p">.</span><span class="n">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">"[whenFueLift] $it"</span><span class="p">)</span>
+  <span class="n">it</span>
+<span class="p">}.</span><span class="n">subscribe</span> <span class="p">{</span>
+  <span class="n">Log</span><span class="p">.</span><span class="n">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">"[whenFueLiftSub] $it"</span><span class="p">)</span>
+<span class="p">}</span>
 
-<p>그럼에도 불구하고, 추천하는 책이니 그냥 한번 읽어나 보자라는 마음으로 책을 읽기 시작했다.결론부터 말하면 책에는 견습생에서 장인이 되기까지 많은 방법들이 있었지만, 머릿속에 뚜렷히 남는 내용은 사실 많지 않다. (한 번 읽고 모든 내용을 다 알면 천재겠지;;)</p>
+<span class="n">obFuel1</span><span class="p">.</span><span class="n">filter</span> <span class="p">{</span>
+  <span class="n">Log</span><span class="p">.</span><span class="n">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">"[whenFueDown] $it"</span><span class="p">)</span>
+  <span class="p">!</span><span class="n">it</span>
+<span class="p">}.</span><span class="n">subscribe</span> <span class="p">{</span>
+  <span class="n">Log</span><span class="p">.</span><span class="n">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">"[whenFueDownSub] $it"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
-<p>기억에 남는 내용은 <code class="highlighter-rouge">연습, 연습, 또 연습</code>, <code class="highlighter-rouge">부숴도 괜찮은 장난감</code>, ` 배운 것을 기록하라<code class="highlighter-rouge">, </code>배운 것을 공유하라`  정도이다. 이런 내용이 내 머릿속에 남은 이유는 현재 내가 하려고 하는 것들이라서 그런 듯 하다. 아무래도 관심이 많다보니 다른 내용보다 더 머릿속에 남아있는 듯 하다.</p>
+<pre><code class="language-log">D/FuelPump01: [whenFueLift] false
+D/FuelPump01: [whenFueDown] false
+D/FuelPump01: [whenFueDownSub] false
+D/FuelPump01: [whenFueDown] true
+D/FuelPump01: [whenFueDown] false
+D/FuelPump01: [whenFueDownSub] false
+</code></pre>
 
-<p>나중에 다시 이 책을 읽으면, 그 때 나의 주된 관심을 도와줄 수 있는 방법이 머릿속에 더 남겠지.이 책은 가끔씩 읽으면서 내가 하려는 것에 도움이 되는 방법을 얻을 수 있기에 좋을 것 같다.</p>
+<p>위와 같은 결과를 얻게 된다.</p>
 
-<p><code class="highlighter-rouge">프로그래머의 길, 멘토에게 묻다</code> 를 첫번째 읽은 나의 결론은 개인프로젝트(부숴도 괜찮은 장난감)를 진행하면서 배운 내용을 여기 블로그에 기록하자는 것을 꾸준히 실행에 옮기자는 것이다.</p>
+<p>하나의 Observabe에 여러개의 subscriber가 붙을 수는 없다. 나중에 subscriber가 등록된다면 먼저 등록된 subscriber로는 data가 전달이 되지 않는다.</p>
+
+<div class="language-kotlin highlighter-rouge"><pre class="highlight"><code><span class="kd">val</span> <span class="py">obFuel1</span> <span class="p">=</span> <span class="n">tb_fuel1</span><span class="p">.</span><span class="n">checkedChanges</span><span class="p">().</span><span class="n">share</span><span class="p">()</span>
+<span class="n">obFuel1</span><span class="p">.</span><span class="n">filter</span> <span class="p">{</span>
+  <span class="n">Log</span><span class="p">.</span><span class="n">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">"[whenFueLift] $it"</span><span class="p">)</span>
+  <span class="n">it</span>
+<span class="p">}.</span><span class="n">subscribe</span> <span class="p">{</span>
+  <span class="n">Log</span><span class="p">.</span><span class="n">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">"[whenFueLiftSub] $it"</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">obFuel1</span><span class="p">.</span><span class="n">filter</span> <span class="p">{</span>
+  <span class="n">Log</span><span class="p">.</span><span class="n">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">"[whenFueDown] $it"</span><span class="p">)</span>
+  <span class="p">!</span><span class="n">it</span>
+<span class="p">}.</span><span class="n">subscribe</span> <span class="p">{</span>
+  <span class="n">Log</span><span class="p">.</span><span class="n">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">"[whenFueDownSub] $it"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>이런 경우는 위 코드처럼 <code class="highlighter-rouge">share()</code> 를 사용하면 된다.</p>
+
+<pre><code class="language-log">D/FuelPump01: [whenFueLift] true
+D/FuelPump01: [whenFueLiftSub] true
+D/FuelPump01: [whenFueDown] true
+D/FuelPump01: [whenFueLift] false
+D/FuelPump01: [whenFueDown] false
+D/FuelPump01: [whenFueDownSub] false
+</code></pre>
+
+<p>위 로그처럼 on/off obsevable을 생성할 수 있다.</p>
+
+<p>아래 내용은 <code class="highlighter-rouge">share()</code> 에 대한 java doc 내용이다.</p>
+
+<pre><code class="language-doc">Returns a new Observable that multicasts (shares) the original Observable. 
+As long as there is at least one Subscriber this Observable will be subscribed and emitting data. 
+When all subscribers have unsubscribed it will unsubscribe from the source Observable.
+This is an alias for publish().ConnectableObservable.refCount().
+</code></pre>
+
+<h2 id="link"><em>참조 link</em></h2>
+
+<p><a href="http://reactivex.io/RxJava/javadoc/rx/Observable.html#share--">share()</a></p>
+
+<p><a href="https://blog.mindorks.com/how-to-use-rxjava-share-operator-26b08973771a">How to user RXjava share() operator?</a></p>
+
 
 </article>
 
 
 
 <section class="tags">
-  <strong>Tags:</strong> <a href="/tag/review">review</a>,&nbsp;<a href="/tag/book">book</a>
+  <strong>Tags:</strong> <a href="/tag/Rx">Rx</a>,&nbsp;<a href="/tag/Rxbinding">Rxbinding</a>
 </section>
 
 
@@ -190,7 +257,7 @@
   
     
     
-      <a href="//twitter.com/share?text=%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%9D%98+%EA%B8%B8%2C+%EB%A9%98%ED%86%A0%EC%97%90%EA%B2%8C+%EB%AC%BB%EB%8B%A4&url=http%3A%2F%2Fyong-ju.github.io%2Freview%2F2017%2F10%2F31%2Fbook-review-mentor.html&via=y0n9ju"
+      <a href="//twitter.com/share?text=%5BRxBinding2%5D+ToggleButton%EC%97%90%EC%84%9C+on%2Foff+Observable+%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0.&url=http%3A%2F%2Fyong-ju.github.io%2Frx%2Fandroid%2F2017%2F10%2F31%2Frxbinding2-togglebutton.html&via=y0n9ju"
         onclick="window.open(this.href, 'twitter-share', 'width=550,height=255');return false;">
         <i class="fa fa-twitter-square fa-lg"></i>
       </a>
@@ -205,7 +272,7 @@
     
     
     
-      <a href="//www.facebook.com/sharer.php?t=%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%9D%98+%EA%B8%B8%2C+%EB%A9%98%ED%86%A0%EC%97%90%EA%B2%8C+%EB%AC%BB%EB%8B%A4&u=http%3A%2F%2Fyong-ju.github.io%2Freview%2F2017%2F10%2F31%2Fbook-review-mentor.html"
+      <a href="//www.facebook.com/sharer.php?t=%5BRxBinding2%5D+ToggleButton%EC%97%90%EC%84%9C+on%2Foff+Observable+%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0.&u=http%3A%2F%2Fyong-ju.github.io%2Frx%2Fandroid%2F2017%2F10%2F31%2Frxbinding2-togglebutton.html"
         onclick="window.open(this.href, 'facebook-share', 'width=550,height=255');return false;">
         <i class="fa fa-facebook-square fa-lg"></i>
       </a>
@@ -230,7 +297,7 @@
     
     
     
-      <a href="//www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fyong-ju.github.io%2Freview%2F2017%2F10%2F31%2Fbook-review-mentor.html"
+      <a href="//www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fyong-ju.github.io%2Frx%2Fandroid%2F2017%2F10%2F31%2Frxbinding2-togglebutton.html"
         onclick="window.open(this.href, 'linkedin-share', 'width=550,height=255');return false;">
         <i class="fa fa-linkedin-square fa-lg"></i>
       </a>
@@ -431,8 +498,8 @@ $(document).ready(function() {
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-105304415-1', 'auto');
   ga('send', 'pageview', {
-    'page': '/review/2017/10/31/book-review-mentor.html',
-    'title': '프로그래머의 길, 멘토에게 묻다'
+    'page': '/rx/android/2017/10/31/rxbinding2-togglebutton.html',
+    'title': '[RxBinding2] ToggleButton에서 on/off Observable 생성하기.'
   });
 </script>
 
