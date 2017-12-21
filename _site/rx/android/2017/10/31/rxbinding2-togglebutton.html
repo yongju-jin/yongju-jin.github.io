@@ -42,11 +42,11 @@
   
   <!-- Facebook OGP cards -->
   <meta property="og:description" content="[RxBinding2] ToggleButton에서 on/off Observable 생성하기." />
-  <meta property="og:url" content="http://yong-ju.github.io" />
+  <meta property="og:url" content="http://localhost:4000" />
   <meta property="og:site_name" content="Yongju Blog" />
   <meta property="og:title" content="[RxBinding2] ToggleButton에서 on/off Observable 생성하기." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="http://yong-ju.github.io/assets/logo.png" />
+  <meta property="og:image" content="http://localhost:4000/assets/logo.png" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="612" />
   <meta property="og:image:height" content="605" />
@@ -57,16 +57,16 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="[RxBinding2] ToggleButton에서 on/off Observable 생성하기.">
   <meta name="twitter:description" content="[RxBinding2] ToggleButton에서 on/off Observable 생성하기.">
-  <meta name="twitter:image" content="http://yong-ju.github.io/assets/logo.png">
-  <meta name="twitter:url" content="http://yong-ju.github.io">
+  <meta name="twitter:image" content="http://localhost:4000/assets/logo.png">
+  <meta name="twitter:url" content="http://localhost:4000">
   
 
   
 
   <!-- Site styles -->
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://yong-ju.github.io/rx/android/2017/10/31/rxbinding2-togglebutton.html">
-  <link rel="alternate" type="application/rss+xml" title="Yongju Blog" href="http://yong-ju.github.io/feed.xml" />
+  <link rel="canonical" href="http://localhost:4000/rx/android/2017/10/31/rxbinding2-togglebutton.html">
+  <link rel="alternate" type="application/rss+xml" title="Yongju Blog" href="http://localhost:4000/feed.xml" />
 </head>
 
 
@@ -119,6 +119,32 @@
         
           
         
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
       </ul>
     </nav>
   </div>
@@ -161,11 +187,11 @@
 </section>
 
 <article class="post-content">
-  <h1 id="rxbinding2-togglebutton-onoff-observable-">[RxBinding2] ToggleButton에서 on/off Observable 생성하기.</h1>
+  <h1 id="rxbinding2-togglebutton에서-onoff-observable-생성하기">[RxBinding2] ToggleButton에서 on/off Observable 생성하기.</h1>
 
 <p>toggle button 에서 on/off Observabel을 분리하기 위해서 아래와 같이 하면</p>
 
-<div class="language-kotlin highlighter-rouge"><pre class="highlight"><code><span class="kd">val</span> <span class="py">obFuel1</span> <span class="p">=</span> <span class="n">tb_fuel1</span><span class="p">.</span><span class="n">checkedChanges</span><span class="p">()</span>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">obFuel1</span> <span class="p">=</span> <span class="n">tb_fuel1</span><span class="p">.</span><span class="n">checkedChanges</span><span class="p">()</span>
 <span class="n">obFuel1</span><span class="p">.</span><span class="n">filter</span> <span class="p">{</span>
   <span class="n">Log</span><span class="p">.</span><span class="n">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">"[whenFueLift] $it"</span><span class="p">)</span>
   <span class="n">it</span>
@@ -179,8 +205,7 @@
 <span class="p">}.</span><span class="n">subscribe</span> <span class="p">{</span>
   <span class="n">Log</span><span class="p">.</span><span class="n">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">"[whenFueDownSub] $it"</span><span class="p">)</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <pre><code class="language-log">D/FuelPump01: [whenFueLift] false
 D/FuelPump01: [whenFueDown] false
@@ -194,7 +219,7 @@ D/FuelPump01: [whenFueDownSub] false
 
 <p>하나의 Observabe에 여러개의 subscriber가 붙을 수는 없다. 나중에 subscriber가 등록된다면 먼저 등록된 subscriber로는 data가 전달이 되지 않는다.</p>
 
-<div class="language-kotlin highlighter-rouge"><pre class="highlight"><code><span class="kd">val</span> <span class="py">obFuel1</span> <span class="p">=</span> <span class="n">tb_fuel1</span><span class="p">.</span><span class="n">checkedChanges</span><span class="p">().</span><span class="n">share</span><span class="p">()</span>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">obFuel1</span> <span class="p">=</span> <span class="n">tb_fuel1</span><span class="p">.</span><span class="n">checkedChanges</span><span class="p">().</span><span class="n">share</span><span class="p">()</span>
 <span class="n">obFuel1</span><span class="p">.</span><span class="n">filter</span> <span class="p">{</span>
   <span class="n">Log</span><span class="p">.</span><span class="n">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">"[whenFueLift] $it"</span><span class="p">)</span>
   <span class="n">it</span>
@@ -208,8 +233,7 @@ D/FuelPump01: [whenFueDownSub] false
 <span class="p">}.</span><span class="n">subscribe</span> <span class="p">{</span>
   <span class="n">Log</span><span class="p">.</span><span class="n">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">"[whenFueDownSub] $it"</span><span class="p">)</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>이런 경우는 위 코드처럼 <code class="highlighter-rouge">share()</code> 를 사용하면 된다.</p>
 
@@ -231,7 +255,7 @@ When all subscribers have unsubscribed it will unsubscribe from the source Obser
 This is an alias for publish().ConnectableObservable.refCount().
 </code></pre>
 
-<h2 id="link"><em>참조 link</em></h2>
+<h2 id="참조-link"><em>참조 link</em></h2>
 
 <p><a href="http://reactivex.io/RxJava/javadoc/rx/Observable.html#share--">share()</a></p>
 
@@ -257,7 +281,7 @@ This is an alias for publish().ConnectableObservable.refCount().
   
     
     
-      <a href="//twitter.com/share?text=%5BRxBinding2%5D+ToggleButton%EC%97%90%EC%84%9C+on%2Foff+Observable+%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0.&url=http%3A%2F%2Fyong-ju.github.io%2Frx%2Fandroid%2F2017%2F10%2F31%2Frxbinding2-togglebutton.html&via=y0n9ju"
+      <a href="//twitter.com/share?text=%5BRxBinding2%5D+ToggleButton%EC%97%90%EC%84%9C+on%2Foff+Observable+%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0.&url=http%3A%2F%2Flocalhost%3A4000%2Frx%2Fandroid%2F2017%2F10%2F31%2Frxbinding2-togglebutton.html&via=y0n9ju"
         onclick="window.open(this.href, 'twitter-share', 'width=550,height=255');return false;">
         <i class="fa fa-twitter-square fa-lg"></i>
       </a>
@@ -272,7 +296,7 @@ This is an alias for publish().ConnectableObservable.refCount().
     
     
     
-      <a href="//www.facebook.com/sharer.php?t=%5BRxBinding2%5D+ToggleButton%EC%97%90%EC%84%9C+on%2Foff+Observable+%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0.&u=http%3A%2F%2Fyong-ju.github.io%2Frx%2Fandroid%2F2017%2F10%2F31%2Frxbinding2-togglebutton.html"
+      <a href="//www.facebook.com/sharer.php?t=%5BRxBinding2%5D+ToggleButton%EC%97%90%EC%84%9C+on%2Foff+Observable+%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0.&u=http%3A%2F%2Flocalhost%3A4000%2Frx%2Fandroid%2F2017%2F10%2F31%2Frxbinding2-togglebutton.html"
         onclick="window.open(this.href, 'facebook-share', 'width=550,height=255');return false;">
         <i class="fa fa-facebook-square fa-lg"></i>
       </a>
@@ -297,7 +321,7 @@ This is an alias for publish().ConnectableObservable.refCount().
     
     
     
-      <a href="//www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fyong-ju.github.io%2Frx%2Fandroid%2F2017%2F10%2F31%2Frxbinding2-togglebutton.html"
+      <a href="//www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Frx%2Fandroid%2F2017%2F10%2F31%2Frxbinding2-togglebutton.html"
         onclick="window.open(this.href, 'linkedin-share', 'width=550,height=255');return false;">
         <i class="fa fa-linkedin-square fa-lg"></i>
       </a>
@@ -378,6 +402,32 @@ This is an alias for publish().ConnectableObservable.refCount().
         
         
           <li class="nav-link"><a href="/posts/">Posts</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         

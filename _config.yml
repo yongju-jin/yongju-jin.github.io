@@ -5,8 +5,13 @@ gems:
   - jekyll-sitemap
   - jekyll-paginate
 
+plugins:
+  - jekyll-remote-theme
+
 exclude:
   - "/vendor/"
+
+remote_theme: benbalter/retlab
 
 # Site settings
 title: Yongju Blog
