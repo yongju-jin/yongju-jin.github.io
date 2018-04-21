@@ -4,7 +4,6 @@ title: "프로그래머의 길, 멘토에게 묻다"
 date: 2017-10-30 21:56:59
 author: Yongju Jin
 categories: review
-comments: true
 tag: [review, book]
 ---
 # 프로그래머의 길, 멘토에게 묻다

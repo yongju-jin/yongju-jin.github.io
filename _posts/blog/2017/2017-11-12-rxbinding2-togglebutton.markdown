@@ -4,7 +4,6 @@ title: "[RxBinding2] ToggleButton에서 on/off Observable 생성하기."
 date: 2017-10-30 21:56:59
 author: Yongju Jin
 categories: [Rx, Android]
-comments: true
 tag: [Rx, Rxbinding]
 ---
 # [RxBinding2] ToggleButton에서 on/off Observable 생성하기.

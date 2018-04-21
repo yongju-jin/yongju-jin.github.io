@@ -4,7 +4,6 @@ title: "FRP에서의 Stream"
 date: 2017-10-02 21:56:59
 author: Yongju Jin
 categories: FRP
-comments: true
 tag: [FRP, Rx]
 ---
 함수형 반응형 프로그래밍: FRP 입문자를 위한 종합 안내서.

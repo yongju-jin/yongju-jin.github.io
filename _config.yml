@@ -1,17 +1,14 @@
 # External gems
 # See http://ixti.net/software/2013/01/28/using-jekyll-plugins-on-github-pages.html for making `jekyll archives` work.
-gems:
-  - jekyll-archives # Sorry, not GitHub pages friendly!
+plugins:
   - jekyll-sitemap
   - jekyll-paginate
-
-plugins:
   - jekyll-remote-theme
 
 exclude:
   - "/vendor/"
 
-remote_theme: benbalter/retlab
+# remote_theme: benbalter/retlab
 
 # Site settings
 title: Yongju Blog
@@ -30,20 +27,20 @@ logo: "/assets/logo.png"
 
 # Build settings
 markdown: kramdown
-paginate: 10
+paginate: 5
 paginate_path: "/page:num/"
 inter_post_navigation: false
 highlightjs_theme: "monokai-sublime"
 
 # Archive settings (see https://github.com/jekyll/jekyll-archives/)
-jekyll-archives:
-  enabled:
-    - categories
-    - tags
-  layout: 'archive'
-  permalinks:
-    category: '/:name/'
-    tag: '/tags/:name/'
+# jekyll-archives:
+#   enabled:
+#     - categories
+#     - tags
+#   layout: 'archive'
+#   permalinks:
+#     category: '/:name/'
+#     tag: '/tags/:name/'
 
 # Disqus comments
 disqus_shortname: yongju-1
