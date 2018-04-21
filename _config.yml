@@ -42,10 +42,8 @@ jekyll-archives:
     - tags
   layout: 'archive'
   permalinks:
-    year: '/:year/'
-    month: '/:year/:month/'
-    category: '/category/:name/'
-    tag: '/tag/:name/'
+    category: '/:name/'
+    tag: '/tags/:name/'
 
 # Disqus comments
 disqus_shortname: yongju-1
