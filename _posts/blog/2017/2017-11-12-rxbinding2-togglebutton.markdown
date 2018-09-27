@@ -1,10 +1,10 @@
 ---
 layout: post
 title: "[RxBinding2] ToggleButton에서 on/off Observable 생성하기."
-date: 2017-10-30 21:56:59
+date: 2017-11-12 21:56:59
 author: Yongju Jin
 categories: [Rx, Android]
-tag: [Rx, Rxbinding]
+tag: [Rx, Rxbinding, Android]
 ---
 # [RxBinding2] ToggleButton에서 on/off Observable 생성하기.
 
@@ -37,10 +37,7 @@ D/FuelPump01: [whenFueDownSub] false
 ```
 
 위와 같은 결과를 얻게 된다.
-
 하나의 Observabe에 여러개의 subscriber가 붙을 수는 없다. 나중에 subscriber가 등록된다면 먼저 등록된 subscriber로는 data가 전달이 되지 않는다.
-
-
 
 ```kotlin
 val obFuel1 = tb_fuel1.checkedChanges().share()
@@ -71,9 +68,6 @@ D/FuelPump01: [whenFueDownSub] false
 ```
 
 위 로그처럼 on/off obsevable을 생성할 수 있다.
-
-
-
 아래 내용은 `share()` 에 대한 java doc 내용이다.
 
 ```doc
@@ -82,9 +76,6 @@ As long as there is at least one Subscriber this Observable will be subscribed a
 When all subscribers have unsubscribed it will unsubscribe from the source Observable.
 This is an alias for publish().ConnectableObservable.refCount().
 ```
-
-
-
 ## *참조 link*
 
 [share()](http://reactivex.io/RxJava/javadoc/rx/Observable.html#share--)
