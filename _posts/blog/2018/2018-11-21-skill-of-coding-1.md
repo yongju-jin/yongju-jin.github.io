@@ -16,7 +16,9 @@ tag: [coding, book]
 > 작은 단위는 이해, 테스트, 재사용이 쉬워 유지보수성이 좋아짐
 
 여기서 단위는 method 혹은 function 으로 생각하면 될 것 같음.  
-만약 단위의 라인이 15라인을 넘어가게 된다면 리팩터링을 통해서 15랑인 이하의 단위로 맞추는 것이 좋음.
+만약 functions의 라인이 15라인을 넘어가게 된다면 리팩터링을 통해서 15랑인 이하로 맞추는 것이 좋음.
+
+아래는 functions의 라인수를 줄이기 위해서 사용되는 리팩터링 기법이다.
 
 ### 1. 리팩터링 기법: 메서드 추출  
 
@@ -55,16 +57,5 @@ fun addFragment(fragment: Fragment) {
 [_refactoring.guru/extract-method_](https://refactoring.guru/extract-method)
 
 ### 2. 리팩터링 기법: 메서드를 메서드 객체로 대체
-
-리팩터링 전
-
-```kotlin
-
-```
-
-리팩터링 후
-
-```kotlin
-```
 
 [_refactoring.guru/replace-method-with-method-object_](https://refactoring.guru/replace-method-with-method-object)
