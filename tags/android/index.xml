@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>yongju</title>
-    <link>https://yongju-jin.github.io/</link>
-    <description>Recent content on yongju</description>
+    <title>Android on yongju</title>
+    <link>https://yongju-jin.github.io/tags/android/</link>
+    <description>Recent content in Android on yongju</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 12 Nov 2018 17:56:29 +0900</lastBuildDate>
     
-	<atom:link href="https://yongju-jin.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://yongju-jin.github.io/tags/android/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -32,29 +32,6 @@ imageRes adapter는
       <guid>https://yongju-jin.github.io/post/rxbinding-toggle/</guid>
       <description>[RxBinding2] ToggleButton에서 on/off Observable 생성하기. toggle button 에서 on/off Observabel을 분리하기 위해서 아래와 같이 하면
 val obFuel1 = tb_fuel1.checkedChanges() obFuel1.filter { Log.d(TAG, &amp;quot;[whenFueLift] $it&amp;quot;) it }.subscribe { Log.d(TAG, &amp;quot;[whenFueLiftSub] $it&amp;quot;) } obFuel1.filter { Log.d(TAG, &amp;quot;[whenFueDown] $it&amp;quot;) !it }.subscribe { Log.d(TAG, &amp;quot;[whenFueDownSub] $it&amp;quot;) }  D/FuelPump01: [whenFueLift] false D/FuelPump01: [whenFueDown] false D/FuelPump01: [whenFueDownSub] false D/FuelPump01: [whenFueDown] true D/FuelPump01: [whenFueDown] false D/FuelPump01: [whenFueDownSub] false  위와 같은 결과를 얻게 된다. 하나의 Observabe에 여러개의 subscriber가 붙을 수는 없다.</description>
-    </item>
-    
-    <item>
-      <title>프로그래머의 길, 멘토에게 묻다</title>
-      <link>https://yongju-jin.github.io/post/book-review-mentor/</link>
-      <pubDate>Mon, 30 Oct 2017 17:56:29 +0900</pubDate>
-      
-      <guid>https://yongju-jin.github.io/post/book-review-mentor/</guid>
-      <description>프로그래머의 길, 멘토에게 묻다 내가 이 책을 알게되고 접하게 된건 facebook에 있는 책 추천 글을 보고 나서다. 내 facebook은 여러 개발자 분들을 팔로우 하고 있는데(sns를 하지 않기 때문에 친구는 거의 없고 여러 개발자, 그룹 글들이 거의 대부분), 그 중 한 분께서 추천하는 도서에 대한 글을 보고 알게 되었다.
-사실 난 이런 류(너가 잘되기 위해서는 이렇게 저렇게 해야해라는 식)의 책을 좋아하지 않는다. 다 비슷한 내용이고 결국 실제로 행동이 더 중요하다고 생각했기 때문에, 이런 류의 책을 읽는 시간에 다른 책을 읽는게 더 좋다고 생각했었다.</description>
-    </item>
-    
-    <item>
-      <title>FRP에서의 STREAM</title>
-      <link>https://yongju-jin.github.io/post/frp-stream/</link>
-      <pubDate>Mon, 02 Oct 2017 17:56:29 +0900</pubDate>
-      
-      <guid>https://yongju-jin.github.io/post/frp-stream/</guid>
-      <description>함수형 반응형 프로그래밍: FRP 입문자를 위한 종합 안내서.
-2장의 내용을 정리한 자료 입니다.
-2.FRP의 핵심 1. 스트림 타입: 이벤트의 흐름  이벤트의 흐름을 표현한다.
- 책에서는 데이터의 흐름을 Cell, 이벤트의 흐름을 Stream이라고 표현하지만 다른 곳에서는 모두 데이트와 이벤트의 흐름을 모두 Strean이라고 말하고 두 가지를 분류하지 않음.
- Streams are cheap and ubiquitous, anything can be a stream: variables, user inputs, properties, caches, data structures. Rx에서 Observable이 아닐까?  example 1.</description>
     </item>
     
   </channel>

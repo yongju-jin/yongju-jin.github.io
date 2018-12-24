@@ -4,16 +4,21 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <meta name="description" content="">
-    <meta property="og:title" content="Tags">
+    <meta property="og:title" content="하면서 배운것들 #1">
     
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2018-11-12">
     
     <meta property="og:description" content="">
-    <meta property="og:url" content="https://yongju-jin.github.io/tags/">
+    <meta property="og:url" content="https://yongju-jin.github.io/post/know-when-worked-1/">
     <meta property="og:site_name" content="yongju">
     
+    <meta property="og:tags" content="android">
+    
+    <meta property="og:tags" content="databinding">
+    
     <meta name="generator" content="Hugo 0.52" />
-    <title>Tags &middot; yongju</title>
+    <title>하면서 배운것들 #1 &middot; yongju</title>
     
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
@@ -92,24 +97,44 @@
 			<div class="row">
 				<div id="post" class="col-sm-offset-1 col-sm-10 col-md-10 col-lg-8">
 
-<article>
+<main>
 	<header>
-		<h1>Tags</a></h1>
+		<h1>하면서 배운것들 #1</h1>
 	</header>
-<ul>
-	
-	<li><a href="https://yongju-jin.github.io/tags/android/">Android</a></li>
-	
-	<li><a href="https://yongju-jin.github.io/tags/book/">Book</a></li>
-	
-	<li><a href="https://yongju-jin.github.io/tags/databinding/">Databinding</a></li>
-	
-	<li><a href="https://yongju-jin.github.io/tags/review/">Review</a></li>
-	
-	<li><a href="https://yongju-jin.github.io/tags/rx/">Rx</a></li>
-	
-</ul>
-</article>
+
+	<article>
+		
+
+<h2 id="databinding-drawable">Databinding &amp; drawable</h2>
+
+<p>databindig에서 drawable을 지정해줘야 할 필요가 있는 경우 아래와 같이 사용할 수 있음.</p>
+
+<pre><code class="language-xml">app:imageRes=&quot;@{vm.isListType ? @drawable/list : @drawable/card}&quot;
+</code></pre>
+
+<p>drawable을 지정할 떄는 @drawable/<em>filename</em> 이렇게 사용할 수 있음.<br />
+위와 같이 isLisType이 변경될 떄 drawable resource도 변경되도록 할 수 있음.</p>
+
+<p>imageRes adapter는</p>
+
+<pre><code class="language-kotlin">@BindingAdapter(&quot;imageRes&quot;)
+fun ImageView.setImageRes(drawable: Drawable?) {
+    GlideApp.with(this.context).load(drawable)
+        .error(R.drawable.circle_wrap)
+        .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC).into(this)
+}
+</code></pre>
+
+<p>parameter를 Drawable로 받아서 처리하면 됨.</p>
+
+	</article>
+</main>
+
+<div id="bottom-nav" class="text-center center-block">
+	<a href=" https://yongju-jin.github.io/" class="btn btn-default"><i class="fa fa-home"></i> Home</a>
+</div>
+
+
 
 						</div>
 					</div>

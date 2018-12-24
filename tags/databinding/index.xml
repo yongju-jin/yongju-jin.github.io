@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Databinding on yongju</title>
+    <link>https://yongju-jin.github.io/tags/databinding/</link>
+    <description>Recent content in Databinding on yongju</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 12 Nov 2018 17:56:29 +0900</lastBuildDate>
+    
+	<atom:link href="https://yongju-jin.github.io/tags/databinding/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>하면서 배운것들 #1</title>
+      <link>https://yongju-jin.github.io/post/know-when-worked-1/</link>
+      <pubDate>Mon, 12 Nov 2018 17:56:29 +0900</pubDate>
+      
+      <guid>https://yongju-jin.github.io/post/know-when-worked-1/</guid>
+      <description>Databinding &amp;amp; drawable databindig에서 drawable을 지정해줘야 할 필요가 있는 경우 아래와 같이 사용할 수 있음.
+app:imageRes=&amp;quot;@{vm.isListType ? @drawable/list : @drawable/card}&amp;quot;  drawable을 지정할 떄는 @drawable/filename 이렇게 사용할 수 있음.
+위와 같이 isLisType이 변경될 떄 drawable resource도 변경되도록 할 수 있음.
+imageRes adapter는
+@BindingAdapter(&amp;quot;imageRes&amp;quot;) fun ImageView.setImageRes(drawable: Drawable?) { GlideApp.with(this.context).load(drawable) .error(R.drawable.circle_wrap) .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC).into(this) }  parameter를 Drawable로 받아서 처리하면 됨.</description>
+    </item>
+    
+  </channel>
+</rss>

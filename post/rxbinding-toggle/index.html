@@ -4,16 +4,21 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <meta name="description" content="">
-    <meta property="og:title" content="Tags">
+    <meta property="og:title" content="[RxBinding2] ToggleButton에서 on/off Observable 생성하기.">
     
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2017-11-12">
     
     <meta property="og:description" content="">
-    <meta property="og:url" content="https://yongju-jin.github.io/tags/">
+    <meta property="og:url" content="https://yongju-jin.github.io/post/rxbinding-toggle/">
     <meta property="og:site_name" content="yongju">
     
+    <meta property="og:tags" content="Rx">
+    
+    <meta property="og:tags" content="Android">
+    
     <meta name="generator" content="Hugo 0.52" />
-    <title>Tags &middot; yongju</title>
+    <title>[RxBinding2] ToggleButton에서 on/off Observable 생성하기. &middot; yongju</title>
     
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
@@ -92,24 +97,94 @@
 			<div class="row">
 				<div id="post" class="col-sm-offset-1 col-sm-10 col-md-10 col-lg-8">
 
-<article>
+<main>
 	<header>
-		<h1>Tags</a></h1>
+		<h1>[RxBinding2] ToggleButton에서 on/off Observable 생성하기.</h1>
 	</header>
-<ul>
-	
-	<li><a href="https://yongju-jin.github.io/tags/android/">Android</a></li>
-	
-	<li><a href="https://yongju-jin.github.io/tags/book/">Book</a></li>
-	
-	<li><a href="https://yongju-jin.github.io/tags/databinding/">Databinding</a></li>
-	
-	<li><a href="https://yongju-jin.github.io/tags/review/">Review</a></li>
-	
-	<li><a href="https://yongju-jin.github.io/tags/rx/">Rx</a></li>
-	
-</ul>
-</article>
+
+	<article>
+		
+
+<h1 id="rxbinding2-togglebutton에서-on-off-observable-생성하기">[RxBinding2] ToggleButton에서 on/off Observable 생성하기.</h1>
+
+<p>toggle button 에서 on/off Observabel을 분리하기 위해서 아래와 같이 하면</p>
+
+<pre><code class="language-kotlin">val obFuel1 = tb_fuel1.checkedChanges()
+obFuel1.filter {
+  Log.d(TAG, &quot;[whenFueLift] $it&quot;)
+  it
+}.subscribe {
+  Log.d(TAG, &quot;[whenFueLiftSub] $it&quot;)
+}
+
+obFuel1.filter {
+  Log.d(TAG, &quot;[whenFueDown] $it&quot;)
+  !it
+}.subscribe {
+  Log.d(TAG, &quot;[whenFueDownSub] $it&quot;)
+}
+</code></pre>
+
+<pre><code class="language-log">D/FuelPump01: [whenFueLift] false
+D/FuelPump01: [whenFueDown] false
+D/FuelPump01: [whenFueDownSub] false
+D/FuelPump01: [whenFueDown] true
+D/FuelPump01: [whenFueDown] false
+D/FuelPump01: [whenFueDownSub] false
+</code></pre>
+
+<p>위와 같은 결과를 얻게 된다.
+하나의 Observabe에 여러개의 subscriber가 붙을 수는 없다. 나중에 subscriber가 등록된다면 먼저 등록된 subscriber로는 data가 전달이 되지 않는다.</p>
+
+<pre><code class="language-kotlin">val obFuel1 = tb_fuel1.checkedChanges().share()
+obFuel1.filter {
+  Log.d(TAG, &quot;[whenFueLift] $it&quot;)
+  it
+}.subscribe {
+  Log.d(TAG, &quot;[whenFueLiftSub] $it&quot;)
+}
+
+obFuel1.filter {
+  Log.d(TAG, &quot;[whenFueDown] $it&quot;)
+  !it
+}.subscribe {
+  Log.d(TAG, &quot;[whenFueDownSub] $it&quot;)
+}
+</code></pre>
+
+<p>이런 경우는 위 코드처럼 <code>share()</code> 를 사용하면 된다.</p>
+
+<pre><code class="language-log">D/FuelPump01: [whenFueLift] true
+D/FuelPump01: [whenFueLiftSub] true
+D/FuelPump01: [whenFueDown] true
+D/FuelPump01: [whenFueLift] false
+D/FuelPump01: [whenFueDown] false
+D/FuelPump01: [whenFueDownSub] false
+</code></pre>
+
+<p>위 로그처럼 on/off obsevable을 생성할 수 있다.
+아래 내용은 <code>share()</code> 에 대한 java doc 내용이다.</p>
+
+<pre><code class="language-doc">Returns a new Observable that multicasts (shares) the original Observable. 
+As long as there is at least one Subscriber this Observable will be subscribed and emitting data. 
+When all subscribers have unsubscribed it will unsubscribe from the source Observable.
+This is an alias for publish().ConnectableObservable.refCount().
+</code></pre>
+
+<h2 id="참조-link"><em>참조 link</em></h2>
+
+<p><a href="http://reactivex.io/RxJava/javadoc/rx/Observable.html#share--">share()</a></p>
+
+<p><a href="https://blog.mindorks.com/how-to-use-rxjava-share-operator-26b08973771a">How to user RXjava share() operator?</a></p>
+
+	</article>
+</main>
+
+<div id="bottom-nav" class="text-center center-block">
+	<a href=" https://yongju-jin.github.io/" class="btn btn-default"><i class="fa fa-home"></i> Home</a>
+</div>
+
+
 
 						</div>
 					</div>

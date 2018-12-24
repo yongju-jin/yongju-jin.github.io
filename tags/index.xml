@@ -1,14 +1,60 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on My New Hugo Site</title>
+    <title>Tags on yongju</title>
     <link>https://yongju-jin.github.io/tags/</link>
-    <description>Recent content in Tags on My New Hugo Site</description>
+    <description>Recent content in Tags on yongju</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Mon, 12 Nov 2018 17:56:29 +0900</lastBuildDate>
     
 	<atom:link href="https://yongju-jin.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Android</title>
+      <link>https://yongju-jin.github.io/tags/android/</link>
+      <pubDate>Mon, 12 Nov 2018 17:56:29 +0900</pubDate>
+      
+      <guid>https://yongju-jin.github.io/tags/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Book</title>
+      <link>https://yongju-jin.github.io/tags/book/</link>
+      <pubDate>Mon, 30 Oct 2017 17:56:29 +0900</pubDate>
+      
+      <guid>https://yongju-jin.github.io/tags/book/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Databinding</title>
+      <link>https://yongju-jin.github.io/tags/databinding/</link>
+      <pubDate>Mon, 12 Nov 2018 17:56:29 +0900</pubDate>
+      
+      <guid>https://yongju-jin.github.io/tags/databinding/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Review</title>
+      <link>https://yongju-jin.github.io/tags/review/</link>
+      <pubDate>Mon, 30 Oct 2017 17:56:29 +0900</pubDate>
+      
+      <guid>https://yongju-jin.github.io/tags/review/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rx</title>
+      <link>https://yongju-jin.github.io/tags/rx/</link>
+      <pubDate>Sun, 12 Nov 2017 17:56:29 +0900</pubDate>
+      
+      <guid>https://yongju-jin.github.io/tags/rx/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
