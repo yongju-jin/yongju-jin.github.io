@@ -1,105 +1,275 @@
 <!DOCTYPE html>
-<html lang="en">
-<head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# website: http://ogp.me/ns/website#">
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <meta name="description" content="">
-    <meta property="og:title" content="FRP에서의 STREAM">
-    
-    <meta property="og:type" content="article">
-    <meta property="article:published_time" content="2017-10-02">
-    
-    <meta property="og:description" content="">
-    <meta property="og:url" content="https://yongju-jin.github.io/post/frp-stream/">
-    <meta property="og:site_name" content="yongju">
-    
-    <meta name="generator" content="Hugo 0.52" />
-    <title>FRP에서의 STREAM &middot; yongju</title>
-    
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
-    <link rel="stylesheet" href="https://yongju-jin.github.io/css/style.css">
-    
-    <link href="https://yongju-jin.github.io/index.xml" rel="alternate" type="application/rss+xml" title="yongju" />
-    
-    
-    <link rel="icon" href="https://yongju-jin.github.io/favicon.ico" />
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
     
 
-    
-    
-</head>
-<body>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-<nav class="navbar navbar-default navbar-fixed-top visible-xs">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			
-				<a class="navbar-brand" href="https://yongju-jin.github.io/">yongju&#39;s blog</a>
-			
-		</div>
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav">
-				
-				
-					<li><a href="https://yongju-jin.github.io/post/">Blog</a></li>
-				
-			</ul>
-		</div>
-	</div>
+  <title>FRP에서의 STREAM - 전문 초보 개발자</title>
+  <meta property="og:title" content="FRP에서의 STREAM" />
+  <meta name="twitter:title" content="FRP에서의 STREAM" />
+  <meta name="description" content="함수형 반응형 프로그래밍: FRP 입문자를 위한 종합 안내서.
+2장의 내용을 정리한 자료 입니다.
+2.FRP의 핵심 1. 스트림 타입: 이벤트의 흐름  이벤트의 흐름을 표현한다.
+ 책에서는 데이터의 흐름을 Cell, 이벤트의 흐름을 Stream이라고 표현하지만 다른 곳에서는 모두 데이트와 이벤트의 흐름을 모두 Strean이라고 말하고 두 가지를 분류하지 않음.
+ Streams are cheap and ubiquitous, anything can be a stream: variables, user inputs, properties, caches, data structures. Rx에서 Observable이 아닐까?  example 1.">
+  <meta property="og:description" content="함수형 반응형 프로그래밍: FRP 입문자를 위한 종합 안내서.
+2장의 내용을 정리한 자료 입니다.
+2.FRP의 핵심 1. 스트림 타입: 이벤트의 흐름  이벤트의 흐름을 표현한다.
+ 책에서는 데이터의 흐름을 Cell, 이벤트의 흐름을 Stream이라고 표현하지만 다른 곳에서는 모두 데이트와 이벤트의 흐름을 모두 Strean이라고 말하고 두 가지를 분류하지 않음.
+ Streams are cheap and ubiquitous, anything can be a stream: variables, user inputs, properties, caches, data structures. Rx에서 Observable이 아닐까?  example 1.">
+  <meta name="twitter:description" content="함수형 반응형 프로그래밍: FRP 입문자를 위한 종합 안내서.
+2장의 내용을 정리한 자료 입니다.
+2.FRP의 핵심 1. 스트림 타입: 이벤트의 흐름  이벤트의 흐름을 표현한다.
+ 책에서는 데이터의 흐름을 Cell, 이벤트의 흐름을 Stream이라고 표현하지만 다른 곳에서는 모두 데이트와 이벤트의 흐름을 모두 Strean이라고 말하고 두 가지를 분류하지 않 …"><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "전문 초보 개발자",
+    
+    "url": "https:\/\/yongju-jin.github.io\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/yongju-jin.github.io\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/yongju-jin.github.io\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/yongju-jin.github.io\/post\/frp-stream\/",
+          "name": "F r p에서의 s t r e a m"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : ""
+  },
+  "headline": "FRP에서의 STREAM",
+  "description" : "함수형 반응형 프로그래밍: FRP 입문자를 위한 종합 안내서.\n2장의 내용을 정리한 자료 입니다.\n2.FRP의 핵심 1. 스트림 타입: 이벤트의 흐름  이벤트의 흐름을 표현한다.\n 책에서는 데이터의 흐름을 Cell, 이벤트의 흐름을 Stream이라고 표현하지만 다른 곳에서는 모두 데이트와 이벤트의 흐름을 모두 Strean이라고 말하고 두 가지를 분류하지 않음.\n Streams are cheap and ubiquitous, anything can be a stream: variables, user inputs, properties, caches, data structures. Rx에서 Observable이 아닐까?  example 1.",
+  "inLanguage" : "en",
+  "wordCount":  410 ,
+  "datePublished" : "2017-10-02T17:56:29",
+  "dateModified" : "2017-10-02T17:56:29",
+  "image" : "https:\/\/yongju-jin.github.io\/",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "https:\/\/yongju-jin.github.io\/post\/frp-stream\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/yongju-jin.github.io\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/yongju-jin.github.io\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="FRP에서의 STREAM" />
+<meta property="og:description" content="함수형 반응형 프로그래밍: FRP 입문자를 위한 종합 안내서.
+2장의 내용을 정리한 자료 입니다.
+2.FRP의 핵심 1. 스트림 타입: 이벤트의 흐름  이벤트의 흐름을 표현한다.
+ 책에서는 데이터의 흐름을 Cell, 이벤트의 흐름을 Stream이라고 표현하지만 다른 곳에서는 모두 데이트와 이벤트의 흐름을 모두 Strean이라고 말하고 두 가지를 분류하지 않음.
+ Streams are cheap and ubiquitous, anything can be a stream: variables, user inputs, properties, caches, data structures. Rx에서 Observable이 아닐까?  example 1.">
+<meta property="og:url" content="https://yongju-jin.github.io/post/frp-stream/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="전문 초보 개발자" />
+  <meta name="twitter:title" content="FRP에서의 STREAM" />
+  <meta name="twitter:description" content="함수형 반응형 프로그래밍: FRP 입문자를 위한 종합 안내서.
+2장의 내용을 정리한 자료 입니다.
+2.FRP의 핵심 1. 스트림 타입: 이벤트의 흐름  이벤트의 흐름을 표현한다.
+ 책에서는 데이터의 흐름을 Cell, 이벤트의 흐름을 Stream이라고 표현하지만 다른 곳에서는 모두 데이트와 이벤트의 흐름을 모두 Strean이라고 말하고 두 가지를 분류하지 않 …">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@y0n9ju" />
+  <meta name="twitter:creator" content="@y0n9ju" />
+  <link href='https://yongju-jin.github.io/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@y0n9ju" />
+  <meta name="twitter:creator" content="@y0n9ju" />
+  <meta property="og:url" content="https://yongju-jin.github.io/post/frp-stream/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="전문 초보 개발자" />
+
+  <meta name="generator" content="Hugo 0.55.5" />
+  <link rel="alternate" href="https://yongju-jin.github.io/index.xml" type="application/rss+xml" title="전문 초보 개발자"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://yongju-jin.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://yongju-jin.github.io/css/highlight.min.css" /><link rel="stylesheet" href="https://yongju-jin.github.io/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://yongju-jin.github.io/">전문 초보 개발자</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
 </nav>
-<div class="container-fluid">
-	<div class="row">
-		<div id="menu" class="hidden-xs col-sm-4 col-md-3">
-	<div id="menu-content" class="vertical-align">
-		
-			<h1 class="text-center"><a href="https://yongju-jin.github.io/">yongju&#39;s blog</a></h1>
-		
-		
-		
-			<small class="text-center center-block">전문 초보 개발자의 블로그</small>
-		
-		
-		
-			<img id="profile-pic" src="https://yongju-jin.github.io//img/profile.jpeg" alt="My Picture" class="img-circle center-block">
-		
-		<div id="social" class="text-center">
-			
-				<a href="https://github.com/yongju-jin"><i class="fa fa-github fa-2x"></i></a>
-			
-				<a href="https://twitter.com/y0n9ju"><i class="fa fa-twitter fa-2x"></i></a>
-			
-				<a href="https://www.linkedin.com/in/yongju/"><i class="fa fa-linkedin fa-2x"></i></a>
-			
 
-			<a href="mailto:yong8521@gmail.com"><i class="fa fa-envelope-o fa-2x"></i></a>
-		</div>
-		<div id="links" class="text-center">
-			
-			
-				<a href="https://yongju-jin.github.io/post/">Blog</a>
-			
-		</div>
-	</div>
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
 </div>
 
-		<div id="content" class="col-xs-12 col-sm-8 col-md-9">
-			<div class="row">
-				<div id="post" class="col-sm-offset-1 col-sm-10 col-md-10 col-lg-8">
 
-<main>
-	<header>
-		<h1>FRP에서의 STREAM</h1>
-	</header>
+  
+  
+  
 
-	<article>
-		
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>FRP에서의 STREAM</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on October 2, 2017
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;410&nbsp;words
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
 
 <p>함수형 반응형 프로그래밍: FRP 입문자를 위한 종합 안내서.</p>
 
@@ -126,74 +296,68 @@
 
 <blockquote>
 <p>sodium</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="o">&gt;</span> <span class="n">SButton</span> <span class="n">clear</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SButton</span><span class="o">(</span><span class="s">&#34;Clear&#34;</span><span class="o">);</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span> <span class="kd">final</span> <span class="n">Stream</span><span class="o">&lt;</span><span class="n">Unit</span><span class="o">&gt;</span> <span class="n">sClicked</span> <span class="o">=</span> <span class="n">clear</span><span class="o">.</span><span class="na">sClicked</span><span class="o">;</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span> <span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">sClearIt</span> <span class="o">=</span> <span class="n">sClicked</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">u</span> <span class="o">-&gt;</span> <span class="s">&#34;&#34;</span><span class="o">);</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span> <span class="n">STextField</span> <span class="n">text</span> <span class="o">=</span> <span class="k">new</span> <span class="n">STextField</span><span class="o">(</span><span class="n">sClearIt</span><span class="o">,</span> <span class="s">&#34;Hello&#34;</span><span class="o">);</span>
+<span class="o">&gt;</span> <span class="err">```</span>
 
-<pre><code class="language-java">&gt; SButton clear = new SButton(&quot;Clear&quot;);
-&gt;
-&gt; final Stream&lt;Unit&gt; sClicked = clear.sClicked;
-&gt;
-&gt; Stream&lt;String&gt; sClearIt = sClicked.map(u -&gt; &quot;&quot;);
-&gt;
-&gt; STextField text = new STextField(sClearIt, &quot;Hello&quot;);
-&gt; ```
+<span class="o">&gt;</span> <span class="n">RxBinding</span><span class="o">(</span><span class="n">android</span><span class="o">,</span> <span class="n">kotlin</span><span class="o">)</span>  
 
-&gt; RxBinding(android, kotlin)  
+<span class="o">&gt;</span> <span class="err">```</span><span class="n">kotlin</span>
+<span class="o">&gt;</span> <span class="n">val</span> <span class="n">sClicked</span> <span class="o">=</span> <span class="n">RxView</span><span class="o">.</span><span class="na">clicks</span><span class="o">(</span><span class="n">clear</span><span class="o">)</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span> <span class="n">val</span> <span class="n">sClearIt</span> <span class="o">=</span> <span class="n">sClicked</span><span class="o">.</span><span class="na">map</span> <span class="o">{</span> <span class="s">&#34;&#34;</span> <span class="o">}</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span> <span class="n">sClearIt</span><span class="o">.</span><span class="na">subscribe</span><span class="o">(</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span>     <span class="nl">editText:</span><span class="o">:</span><span class="n">setText</span><span class="o">,</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span>     <span class="nl">Throwable:</span><span class="o">:</span><span class="n">printStackTrace</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span> <span class="o">)</span>
+<span class="o">&gt;</span> <span class="err">```</span>
 
-&gt; ```kotlin
-&gt; val sClicked = RxView.clicks(clear)
-&gt;
-&gt; val sClearIt = sClicked.map { &quot;&quot; }
-&gt;
-&gt; sClearIt.subscribe(
-&gt;
-&gt;     editText::setText,
-&gt;
-&gt;     Throwable::printStackTrace
-&gt;
-&gt; )
-&gt; ```
+<span class="o">&gt;</span> <span class="o">(</span><span class="n">물론</span> <span class="n">실제</span> <span class="n">코드라면</span> <span class="n">이런식으로</span><span class="o">?)</span>
 
-&gt; (물론 실제 코드라면 이런식으로?)
+<span class="o">&gt;</span> <span class="err">```</span><span class="n">kotlin</span>
+<span class="o">&gt;</span> <span class="n">RxView</span><span class="o">.</span><span class="na">clicks</span><span class="o">(</span><span class="n">clear</span><span class="o">).</span><span class="na">subscribe</span><span class="o">({</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span>     <span class="n">editText</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">&#34;&#34;</span><span class="o">)</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span> <span class="o">},</span> <span class="nl">Throwable:</span><span class="o">:</span><span class="n">printStackTrace</span><span class="o">)</span>
+<span class="o">&gt;</span> <span class="err">```</span>
 
-&gt; ```kotlin
-&gt; RxView.clicks(clear).subscribe({
-&gt;
-&gt;     editText.setText(&quot;&quot;)
-&gt;
-&gt; }, Throwable::printStackTrace)
-&gt; ```
+<span class="o">-</span> <span class="n">Unit</span> <span class="o">-</span> <span class="n">아무것도</span> <span class="n">아닌</span> <span class="n">값</span><span class="o">.</span>
 
-- Unit - 아무것도 아닌 값.
+<span class="n">FRP가</span> <span class="n">내부적으로</span> <span class="n">항상</span> <span class="n">인자를</span> <span class="n">하나만</span> <span class="n">밷는</span> <span class="n">핸들러를</span> <span class="nf">사용한다</span><span class="o">(?)</span>  
 
-FRP가 내부적으로 항상 인자를 하나만 밷는 핸들러를 사용한다(?)  
+<span class="n">왜</span> <span class="n">인자를</span> <span class="n">항상</span> <span class="n">전달해야</span> <span class="n">하는지는</span> <span class="n">잘</span> <span class="n">모르겠음</span><span class="o">..</span>  
 
-왜 인자를 항상 전달해야 하는지는 잘 모르겠음..  
+<span class="n">전달할</span> <span class="n">값이</span> <span class="n">없을</span> <span class="n">경우</span> <span class="n">사용</span><span class="o">.</span>  
 
-전달할 값이 없을 경우 사용.  
+<span class="nf">Rx</span><span class="o">(</span><span class="n">RxBinding</span><span class="o">)</span><span class="n">에서는</span> <span class="n">Unit</span> <span class="n">같은것이</span> <span class="n">있는지</span><span class="o">??</span> <span class="n">있다</span><span class="o">.</span> <span class="n">ex</span><span class="o">)</span> <span class="n">Notification</span><span class="o">.</span>
 
-Rx(RxBinding)에서는 Unit 같은것이 있는지?? 있다. ex) Notification.
+<span class="o">-</span> <span class="n">sodium</span>
 
-- sodium
-
-  ```java
-  package nz.sodium;
-  public enum Unit {
-    UNIT;
-    private Unit() {
-    }
-  }
-</code></pre>
-</blockquote>
+  <span class="err">```</span><span class="n">java</span>
+  <span class="kn">package</span> <span class="nn">nz.sodium</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="kd">enum</span> <span class="n">Unit</span> <span class="o">{</span>
+    <span class="n">UNIT</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nf">Unit</span><span class="o">()</span> <span class="o">{</span>
+    <span class="o">}</span>
+  <span class="o">}</span></code></pre></div></blockquote>
 
 <ul>
 <li>RxBinding</li>
 </ul>
-
-<pre><code class="language-java">  @RestrictTo(LIBRARY_GROUP)
-  public enum Notification {
-    INSTANCE
-  }
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java">  <span class="nd">@RestrictTo</span><span class="o">(</span><span class="n">LIBRARY_GROUP</span><span class="o">)</span>
+  <span class="kd">public</span> <span class="kd">enum</span> <span class="n">Notification</span> <span class="o">{</span>
+    <span class="n">INSTANCE</span>
+  <span class="o">}</span></code></pre></div>
 <h3 id="2-map">2. map</h3>
 
 <ul>
@@ -229,23 +393,17 @@ Rx(RxBinding)에서는 Unit 같은것이 있는지?? 있다. ex) Notification.
 
 <blockquote>
 <p>sodium</p>
-
-<pre><code class="language-java">STextField msg = new STextField(&quot;Hello&quot;);
-SLabel lbl = new SLabel(msg.text);
-// msg.text =&gt; Cell&lt;String&gt; type
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">STextField</span> <span class="n">msg</span> <span class="o">=</span> <span class="k">new</span> <span class="n">STextField</span><span class="o">(</span><span class="s">&#34;Hello&#34;</span><span class="o">);</span>
+<span class="n">SLabel</span> <span class="n">lbl</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SLabel</span><span class="o">(</span><span class="n">msg</span><span class="o">.</span><span class="na">text</span><span class="o">);</span>
+<span class="o">//</span> <span class="n">msg</span><span class="o">.</span><span class="na">text</span> <span class="o">=&gt;</span> <span class="n">Cell</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">type</span></code></pre></div>
 <p>RxBinding(android, kotlin)</p>
-
-<pre><code class="language-kotlin">RxTextView.textChanges(editText)
-   .subscribe(
-       textView::setText,
-       Throwable::printStackTrace
-   ).apply {
-       disposables.add(this)
-   }
-</code></pre>
-</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="n">RxTextView</span><span class="p">.</span><span class="n">textChanges</span><span class="p">(</span><span class="n">editText</span><span class="p">)</span>
+   <span class="p">.</span><span class="n">subscribe</span><span class="p">(</span>
+       <span class="n">textView</span><span class="o">::</span><span class="n">setText</span><span class="p">,</span>
+       <span class="n">Throwable</span><span class="o">::</span><span class="n">printStackTrace</span>
+   <span class="p">).</span><span class="n">apply</span> <span class="p">{</span>
+       <span class="n">disposables</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+   <span class="p">}</span></code></pre></div></blockquote>
 
 <ul>
 <li>Cell 매핑하기.<br /></li>
@@ -257,36 +415,27 @@ SLabel lbl = new SLabel(msg.text);
 
 <blockquote>
 <p>sodium</p>
-
-<pre><code class="language-java">STextField msg = new STextField(&quot;Hello&quot;);
-Cell&lt;String&gt; reversed = msg.text.map(t -&gt;
-   new StringBuilder(t).reverse().toString());
-SLabel lbl = new SLabel(reversed);
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">STextField</span> <span class="n">msg</span> <span class="o">=</span> <span class="k">new</span> <span class="n">STextField</span><span class="o">(</span><span class="s">&#34;Hello&#34;</span><span class="o">);</span>
+<span class="n">Cell</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">reversed</span> <span class="o">=</span> <span class="n">msg</span><span class="o">.</span><span class="na">text</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">t</span> <span class="o">-&gt;</span>
+   <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">(</span><span class="n">t</span><span class="o">).</span><span class="na">reverse</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
+<span class="n">SLabel</span> <span class="n">lbl</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SLabel</span><span class="o">(</span><span class="n">reversed</span><span class="o">);</span></code></pre></div>
 <p>RxBinding(android, kotlin)</p>
-
-<pre><code class="language-kotlin">val textChanges = RxTextView.textChanges(editText)
-val textChagesMap = textChanges.map { StringBuilder(it).reverse().toString() }
-textChagesMap.subscribe(
-   textView2::setText,
-   Throwable::printStackTrace
-).apply {
-   disposables.add(this)
-}
-</code></pre>
-
-<pre><code class="language-kotlin">RxTextView.textChanges(editText)
-   .subscribe(
-       {
-           textView2.text = it.reversed()
-       },
-       Throwable::printStackTrace
-   ).apply {
-       disposables.add(this)
-   }
-</code></pre>
-</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">val</span> <span class="py">textChanges</span> <span class="p">=</span> <span class="n">RxTextView</span><span class="p">.</span><span class="n">textChanges</span><span class="p">(</span><span class="n">editText</span><span class="p">)</span>
+<span class="k">val</span> <span class="py">textChagesMap</span> <span class="p">=</span> <span class="n">textChanges</span><span class="p">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">StringBuilder</span><span class="p">(</span><span class="n">it</span><span class="p">).</span><span class="n">reverse</span><span class="p">().</span><span class="n">toString</span><span class="p">()</span> <span class="p">}</span>
+<span class="n">textChagesMap</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span>
+   <span class="n">textView2</span><span class="o">::</span><span class="n">setText</span><span class="p">,</span>
+   <span class="n">Throwable</span><span class="o">::</span><span class="n">printStackTrace</span>
+<span class="p">).</span><span class="n">apply</span> <span class="p">{</span>
+   <span class="n">disposables</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+<span class="p">}</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="n">RxTextView</span><span class="p">.</span><span class="n">textChanges</span><span class="p">(</span><span class="n">editText</span><span class="p">)</span>
+   <span class="p">.</span><span class="n">subscribe</span><span class="p">(</span>
+       <span class="p">{</span>
+           <span class="n">textView2</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="n">it</span><span class="p">.</span><span class="n">reversed</span><span class="p">()</span>
+       <span class="p">},</span>
+       <span class="n">Throwable</span><span class="o">::</span><span class="n">printStackTrace</span>
+   <span class="p">).</span><span class="n">apply</span> <span class="p">{</span>
+       <span class="n">disposables</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+   <span class="p">}</span></code></pre></div></blockquote>
 
 <p>markdown 어렵네요 ㅠ</p>
 
@@ -296,30 +445,190 @@ textChagesMap.subscribe(
 
 <p><a href="https://brunch.co.kr/@oemilk/79">Reactive Programming</a></p>
 
-	</article>
-</main>
 
-<div id="bottom-nav" class="text-center center-block">
-	<a href=" https://yongju-jin.github.io/" class="btn btn-default"><i class="fa fa-home"></i> Home</a>
-</div>
+        
 
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
 
-
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2ffrp-stream%2f&amp;text=FRP%ec%97%90%ec%84%9c%ec%9d%98%20STREAM&amp;via=y0n9ju" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//plus.google.com/share?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2ffrp-stream%2f" target="_blank" title="Share on Google Plus">
+          <i class="fab fa-google-plus"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyongju-jin.github.io%2fpost%2ffrp-stream%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2ffrp-stream%2f&amp;title=FRP%ec%97%90%ec%84%9c%ec%9d%98%20STREAM" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2ffrp-stream%2f&amp;title=FRP%ec%97%90%ec%84%9c%ec%9d%98%20STREAM" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2ffrp-stream%2f&amp;title=FRP%ec%97%90%ec%84%9c%ec%9d%98%20STREAM" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2ffrp-stream%2f&amp;description=FRP%ec%97%90%ec%84%9c%ec%9d%98%20STREAM" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
   </div>
   
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
-  
-  <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
-  
-  
-  <script src="https://yongju-jin.github.io//js/App.js"></script>
-  
-</body>
+              </div>
+            </section>
+        
+
+        
+          
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+          
+            <li class="next">
+              <a href="https://yongju-jin.github.io/post/book-review-mentor/" data-toggle="tooltip" data-placement="top" title="프로그래머의 길, 멘토에게 묻다">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:yong8521@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/yongju-jin" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/y0n9ju" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/yongju" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="https://yongju-jin.github.io/index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2018
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://yongju-jin.github.io/">전문 초보 개발자</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.55.5</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://yongju-jin.github.io/js/main.js"></script>
+<script src="https://yongju-jin.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://yongju-jin.github.io/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
 </html>
+
