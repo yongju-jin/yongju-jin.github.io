@@ -7,21 +7,29 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>하면서 배운것들 #1 - 전문 초보 개발자</title>
-  <meta property="og:title" content="하면서 배운것들 #1" />
-  <meta name="twitter:title" content="하면서 배운것들 #1" />
-  <meta name="description" content="Databinding &amp; drawable databindig에서 drawable을 지정해줘야 할 필요가 있는 경우 아래와 같이 사용할 수 있음.
-app:imageRes=&#34;@{vm.isListType ? @drawable/list : @drawable/card}&#34; drawable을 지정할 떄는 @drawable/filename 이렇게 사용할 수 있음.
-위와 같이 isLisType이 변경될 떄 drawable resource도 변경되도록 할 수 있음.
-imageRes adapter는
-@BindingAdapter(&#34;imageRes&#34;) fun ImageView.setImageRes(drawable: Drawable?) { GlideApp.with(this.context).load(drawable) .error(R.drawable.circle_wrap) .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC).into(this) } parameter를 Drawable로 받아서 처리하면 됨.">
-  <meta property="og:description" content="Databinding &amp; drawable databindig에서 drawable을 지정해줘야 할 필요가 있는 경우 아래와 같이 사용할 수 있음.
-app:imageRes=&#34;@{vm.isListType ? @drawable/list : @drawable/card}&#34; drawable을 지정할 떄는 @drawable/filename 이렇게 사용할 수 있음.
-위와 같이 isLisType이 변경될 떄 drawable resource도 변경되도록 할 수 있음.
-imageRes adapter는
-@BindingAdapter(&#34;imageRes&#34;) fun ImageView.setImageRes(drawable: Drawable?) { GlideApp.with(this.context).load(drawable) .error(R.drawable.circle_wrap) .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC).into(this) } parameter를 Drawable로 받아서 처리하면 됨.">
-  <meta name="twitter:description" content="Databinding &amp; drawable databindig에서 drawable을 지정해줘야 할 필요가 있는 경우 아래와 같이 사용할 수 있음.
-app:imageRes=&#34;@{vm.isListType ? @drawable/list : @drawable/card}&#34; drawable을 지정할 떄는 @drawable/filename 이렇게 사 …"><script type="application/ld+json">
+  <title>[TIL #1] ThreeTenABP - 오늘날짜 구하기 - 전문 초보 개발자</title>
+  <meta property="og:title" content="[TIL #1] ThreeTenABP - 오늘날짜 구하기" />
+  <meta name="twitter:title" content="[TIL #1] ThreeTenABP - 오늘날짜 구하기" />
+  <meta name="description" content="ThreeTenABP Threen Ten Java8에 포함된 날짜 시간을 계산하는 라이브러리로 보인다.
+찾아보다가 알게된 라이브러리로 Android에서 사용하기 위해서 JakeWharton 님께서
+Android 에 맞게 backport 하신 라이브러리다.
+링크
+오늘 사용한 내용은 오늘의 날짜를 가져오는 방법인데 정말 간단하다
+val today = LocalDate.now() val year = today.year val month = today.monthValue val day today.dayOfMonth 이밖에도 날짜 더하기, 뺴기 등등 편한 API가 많이 제공되고 있다.
+추후 날짜 더하기 및 기타 날짜 관련 추가작업을 진행할 때 사용해 봐야겠다.">
+  <meta property="og:description" content="ThreeTenABP Threen Ten Java8에 포함된 날짜 시간을 계산하는 라이브러리로 보인다.
+찾아보다가 알게된 라이브러리로 Android에서 사용하기 위해서 JakeWharton 님께서
+Android 에 맞게 backport 하신 라이브러리다.
+링크
+오늘 사용한 내용은 오늘의 날짜를 가져오는 방법인데 정말 간단하다
+val today = LocalDate.now() val year = today.year val month = today.monthValue val day today.dayOfMonth 이밖에도 날짜 더하기, 뺴기 등등 편한 API가 많이 제공되고 있다.
+추후 날짜 더하기 및 기타 날짜 관련 추가작업을 진행할 때 사용해 봐야겠다.">
+  <meta name="twitter:description" content="ThreeTenABP Threen Ten Java8에 포함된 날짜 시간을 계산하는 라이브러리로 보인다.
+찾아보다가 알게된 라이브러리로 Android에서 사용하기 위해서 JakeWharton 님께서
+Android 에 맞게 backport 하신 라이브러리다.
+링크
+오늘 사용한 내용은 오늘의 날짜를 가져오는 방법인데 정말 간단하다
+val today = …"><script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "WebSite",
@@ -56,8 +64,8 @@ app:imageRes=&#34;@{vm.isListType ? @drawable/list : @drawable/card}&#34; drawab
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "https:\/\/yongju-jin.github.io\/post\/know-when-worked-1\/",
-          "name": "하면서 배운것들 #1"
+          "@id": "https:\/\/yongju-jin.github.io\/post\/til_1\/",
+          "name": "[ t i l #1] three ten a b p 오늘날짜 구하기"
         }
     }]
 }
@@ -68,15 +76,15 @@ app:imageRes=&#34;@{vm.isListType ? @drawable/list : @drawable/card}&#34; drawab
   "author": {
     "name" : ""
   },
-  "headline": "하면서 배운것들 #1",
-  "description" : "Databinding \x26amp; drawable databindig에서 drawable을 지정해줘야 할 필요가 있는 경우 아래와 같이 사용할 수 있음.\napp:imageRes=\x26#34;@{vm.isListType ? @drawable\/list : @drawable\/card}\x26#34; drawable을 지정할 떄는 @drawable\/filename 이렇게 사용할 수 있음.\n위와 같이 isLisType이 변경될 떄 drawable resource도 변경되도록 할 수 있음.\nimageRes adapter는\n@BindingAdapter(\x26#34;imageRes\x26#34;) fun ImageView.setImageRes(drawable: Drawable?) { GlideApp.with(this.context).load(drawable) .error(R.drawable.circle_wrap) .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC).into(this) } parameter를 Drawable로 받아서 처리하면 됨.",
+  "headline": "[TIL #1] ThreeTenABP - 오늘날짜 구하기",
+  "description" : "ThreeTenABP Threen Ten Java8에 포함된 날짜 시간을 계산하는 라이브러리로 보인다.\n찾아보다가 알게된 라이브러리로 Android에서 사용하기 위해서 JakeWharton 님께서\nAndroid 에 맞게 backport 하신 라이브러리다.\n링크\n오늘 사용한 내용은 오늘의 날짜를 가져오는 방법인데 정말 간단하다\nval today = LocalDate.now() val year = today.year val month = today.monthValue val day today.dayOfMonth 이밖에도 날짜 더하기, 뺴기 등등 편한 API가 많이 제공되고 있다.\n추후 날짜 더하기 및 기타 날짜 관련 추가작업을 진행할 때 사용해 봐야겠다.",
   "inLanguage" : "en",
-  "wordCount":  55 ,
-  "datePublished" : "2018-11-12T17:56:29",
-  "dateModified" : "2018-11-12T17:56:29",
+  "wordCount":  71 ,
+  "datePublished" : "2019-05-21T00:20:21",
+  "dateModified" : "2019-05-21T00:20:21",
   "image" : "https:\/\/yongju-jin.github.io\/",
-  "keywords" : [ "android, databinding" ],
-  "mainEntityOfPage" : "https:\/\/yongju-jin.github.io\/post\/know-when-worked-1\/",
+  "keywords" : [ "TIL, android" ],
+  "mainEntityOfPage" : "https:\/\/yongju-jin.github.io\/post\/til_1\/",
   "publisher" : {
     "@type": "Organization",
     "name" : "https:\/\/yongju-jin.github.io\/",
@@ -90,19 +98,25 @@ app:imageRes=&#34;@{vm.isListType ? @drawable/list : @drawable/card}&#34; drawab
 }
 </script>
 
-<meta property="og:title" content="하면서 배운것들 #1" />
-<meta property="og:description" content="Databinding &amp; drawable databindig에서 drawable을 지정해줘야 할 필요가 있는 경우 아래와 같이 사용할 수 있음.
-app:imageRes=&#34;@{vm.isListType ? @drawable/list : @drawable/card}&#34; drawable을 지정할 떄는 @drawable/filename 이렇게 사용할 수 있음.
-위와 같이 isLisType이 변경될 떄 drawable resource도 변경되도록 할 수 있음.
-imageRes adapter는
-@BindingAdapter(&#34;imageRes&#34;) fun ImageView.setImageRes(drawable: Drawable?) { GlideApp.with(this.context).load(drawable) .error(R.drawable.circle_wrap) .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC).into(this) } parameter를 Drawable로 받아서 처리하면 됨.">
-<meta property="og:url" content="https://yongju-jin.github.io/post/know-when-worked-1/" />
+<meta property="og:title" content="[TIL #1] ThreeTenABP - 오늘날짜 구하기" />
+<meta property="og:description" content="ThreeTenABP Threen Ten Java8에 포함된 날짜 시간을 계산하는 라이브러리로 보인다.
+찾아보다가 알게된 라이브러리로 Android에서 사용하기 위해서 JakeWharton 님께서
+Android 에 맞게 backport 하신 라이브러리다.
+링크
+오늘 사용한 내용은 오늘의 날짜를 가져오는 방법인데 정말 간단하다
+val today = LocalDate.now() val year = today.year val month = today.monthValue val day today.dayOfMonth 이밖에도 날짜 더하기, 뺴기 등등 편한 API가 많이 제공되고 있다.
+추후 날짜 더하기 및 기타 날짜 관련 추가작업을 진행할 때 사용해 봐야겠다.">
+<meta property="og:url" content="https://yongju-jin.github.io/post/til_1/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="전문 초보 개발자" />
 
-  <meta name="twitter:title" content="하면서 배운것들 #1" />
-  <meta name="twitter:description" content="Databinding &amp; drawable databindig에서 drawable을 지정해줘야 할 필요가 있는 경우 아래와 같이 사용할 수 있음.
-app:imageRes=&#34;@{vm.isListType ? @drawable/list : @drawable/card}&#34; drawable을 지정할 떄는 @drawable/filename 이렇게 사 …">
+  <meta name="twitter:title" content="[TIL #1] ThreeTenABP - 오늘날짜 구하기" />
+  <meta name="twitter:description" content="ThreeTenABP Threen Ten Java8에 포함된 날짜 시간을 계산하는 라이브러리로 보인다.
+찾아보다가 알게된 라이브러리로 Android에서 사용하기 위해서 JakeWharton 님께서
+Android 에 맞게 backport 하신 라이브러리다.
+링크
+오늘 사용한 내용은 오늘의 날짜를 가져오는 방법인데 정말 간단하다
+val today = …">
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@y0n9ju" />
   <meta name="twitter:creator" content="@y0n9ju" />
@@ -110,7 +124,7 @@ app:imageRes=&#34;@{vm.isListType ? @drawable/list : @drawable/card}&#34; drawab
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@y0n9ju" />
   <meta name="twitter:creator" content="@y0n9ju" />
-  <meta property="og:url" content="https://yongju-jin.github.io/post/know-when-worked-1/" />
+  <meta property="og:url" content="https://yongju-jin.github.io/post/til_1/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="전문 초보 개발자" />
 
@@ -229,7 +243,7 @@ app:imageRes=&#34;@{vm.isListType ? @drawable/list : @drawable/card}&#34; drawab
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
               
-                <h1>하면서 배운것들 #1</h1>
+                <h1>[TIL #1] ThreeTenABP - 오늘날짜 구하기</h1>
               
               
               
@@ -237,13 +251,13 @@ app:imageRes=&#34;@{vm.isListType ? @drawable/list : @drawable/card}&#34; drawab
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on November 12, 2018
+  <i class="fas fa-calendar"></i>&nbsp;Posted on May 21, 2019
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;55&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;71&nbsp;words
   
   
     &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
@@ -268,29 +282,28 @@ app:imageRes=&#34;@{vm.isListType ? @drawable/list : @drawable/card}&#34; drawab
       <article role="main" class="blog-post">
         
 
-<h2 id="databinding-drawable">Databinding &amp; drawable</h2>
+<h1 id="threetenabp">ThreeTenABP</h1>
 
-<p>databindig에서 drawable을 지정해줘야 할 필요가 있는 경우 아래와 같이 사용할 수 있음.</p>
-<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml">app:imageRes=&#34;@{vm.isListType ? @drawable/list : @drawable/card}&#34;</code></pre></div>
-<p>drawable을 지정할 떄는 @drawable/<em>filename</em> 이렇게 사용할 수 있음.<br />
-위와 같이 isLisType이 변경될 떄 drawable resource도 변경되도록 할 수 있음.</p>
+<p>Threen Ten Java8에 포함된 날짜 시간을 계산하는 라이브러리로 보인다.<br />
+찾아보다가 알게된 라이브러리로 Android에서 사용하기 위해서 JakeWharton 님께서<br />
+Android 에 맞게 backport 하신 라이브러리다.<br />
+<a href="https://github.com/JakeWharton/ThreeTenABP">링크</a></p>
 
-<p>imageRes adapter는</p>
-<div class="highlight"><pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="n">@BindingAdapter</span><span class="p">(</span><span class="s">&#34;imageRes&#34;</span><span class="p">)</span>
-<span class="k">fun</span> <span class="nf">ImageView</span><span class="p">.</span><span class="n">setImageRes</span><span class="p">(</span><span class="n">drawable</span><span class="p">:</span> <span class="n">Drawable</span><span class="p">?)</span> <span class="p">{</span>
-    <span class="n">GlideApp</span><span class="p">.</span><span class="n">with</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">context</span><span class="p">).</span><span class="n">load</span><span class="p">(</span><span class="n">drawable</span><span class="p">)</span>
-        <span class="p">.</span><span class="n">error</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="n">drawable</span><span class="p">.</span><span class="n">circle_wrap</span><span class="p">)</span>
-        <span class="p">.</span><span class="n">diskCacheStrategy</span><span class="p">(</span><span class="n">DiskCacheStrategy</span><span class="p">.</span><span class="n">AUTOMATIC</span><span class="p">).</span><span class="n">into</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
-<span class="p">}</span></code></pre></div>
-<p>parameter를 Drawable로 받아서 처리하면 됨.</p>
+<p>오늘 사용한 내용은 오늘의 날짜를 가져오는 방법인데 정말 간단하다</p>
+<div class="highlight"><pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">val</span> <span class="py">today</span> <span class="p">=</span> <span class="n">LocalDate</span><span class="p">.</span><span class="n">now</span><span class="p">()</span>
+<span class="k">val</span> <span class="py">year</span> <span class="p">=</span> <span class="n">today</span><span class="p">.</span><span class="n">year</span>
+<span class="k">val</span> <span class="py">month</span> <span class="p">=</span> <span class="n">today</span><span class="p">.</span><span class="n">monthValue</span>
+<span class="k">val</span> <span class="py">day</span> <span class="n">today</span><span class="p">.</span><span class="n">dayOfMonth</span></code></pre></div>
+<p>이밖에도 날짜 더하기, 뺴기 등등 편한 API가 많이 제공되고 있다.<br />
+추후 날짜 더하기 및 기타 날짜 관련 추가작업을 진행할 때 사용해 봐야겠다.</p>
 
 
         
           <div class="blog-tags">
             
-              <a href="https://yongju-jin.github.io//tags/android/">android</a>&nbsp;
+              <a href="https://yongju-jin.github.io//tags/til/">TIL</a>&nbsp;
             
-              <a href="https://yongju-jin.github.io//tags/databinding/">databinding</a>&nbsp;
+              <a href="https://yongju-jin.github.io//tags/android/">android</a>&nbsp;
             
           </div>
         
@@ -305,49 +318,49 @@ app:imageRes=&#34;@{vm.isListType ? @drawable/list : @drawable/card}&#34; drawab
     <ul class="share">
       
       <li>
-        <a href="//twitter.com/share?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2fknow-when-worked-1%2f&amp;text=%ed%95%98%eb%a9%b4%ec%84%9c%20%eb%b0%b0%ec%9a%b4%ea%b2%83%eb%93%a4%20%231&amp;via=y0n9ju" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2ftil_1%2f&amp;text=%5bTIL%20%231%5d%20ThreeTenABP%20-%20%ec%98%a4%eb%8a%98%eb%82%a0%ec%a7%9c%20%ea%b5%ac%ed%95%98%ea%b8%b0&amp;via=y0n9ju" target="_blank" title="Share on Twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//plus.google.com/share?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2fknow-when-worked-1%2f" target="_blank" title="Share on Google Plus">
+        <a href="//plus.google.com/share?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2ftil_1%2f" target="_blank" title="Share on Google Plus">
           <i class="fab fa-google-plus"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyongju-jin.github.io%2fpost%2fknow-when-worked-1%2f" target="_blank" title="Share on Facebook">
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyongju-jin.github.io%2fpost%2ftil_1%2f" target="_blank" title="Share on Facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//reddit.com/submit?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2fknow-when-worked-1%2f&amp;title=%ed%95%98%eb%a9%b4%ec%84%9c%20%eb%b0%b0%ec%9a%b4%ea%b2%83%eb%93%a4%20%231" target="_blank" title="Share on Reddit">
+        <a href="//reddit.com/submit?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2ftil_1%2f&amp;title=%5bTIL%20%231%5d%20ThreeTenABP%20-%20%ec%98%a4%eb%8a%98%eb%82%a0%ec%a7%9c%20%ea%b5%ac%ed%95%98%ea%b8%b0" target="_blank" title="Share on Reddit">
           <i class="fab fa-reddit"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2fknow-when-worked-1%2f&amp;title=%ed%95%98%eb%a9%b4%ec%84%9c%20%eb%b0%b0%ec%9a%b4%ea%b2%83%eb%93%a4%20%231" target="_blank" title="Share on LinkedIn">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2ftil_1%2f&amp;title=%5bTIL%20%231%5d%20ThreeTenABP%20-%20%ec%98%a4%eb%8a%98%eb%82%a0%ec%a7%9c%20%ea%b5%ac%ed%95%98%ea%b8%b0" target="_blank" title="Share on LinkedIn">
           <i class="fab fa-linkedin"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2fknow-when-worked-1%2f&amp;title=%ed%95%98%eb%a9%b4%ec%84%9c%20%eb%b0%b0%ec%9a%b4%ea%b2%83%eb%93%a4%20%231" target="_blank" title="Share on StumbleUpon">
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2ftil_1%2f&amp;title=%5bTIL%20%231%5d%20ThreeTenABP%20-%20%ec%98%a4%eb%8a%98%eb%82%a0%ec%a7%9c%20%ea%b5%ac%ed%95%98%ea%b8%b0" target="_blank" title="Share on StumbleUpon">
           <i class="fab fa-stumbleupon"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2fknow-when-worked-1%2f&amp;description=%ed%95%98%eb%a9%b4%ec%84%9c%20%eb%b0%b0%ec%9a%b4%ea%b2%83%eb%93%a4%20%231" target="_blank" title="Share on Pinterest">
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2ftil_1%2f&amp;description=%5bTIL%20%231%5d%20ThreeTenABP%20-%20%ec%98%a4%eb%8a%98%eb%82%a0%ec%a7%9c%20%ea%b5%ac%ed%95%98%ea%b8%b0" target="_blank" title="Share on Pinterest">
           <i class="fab fa-pinterest"></i>
         </a>
       </li>
@@ -361,6 +374,13 @@ app:imageRes=&#34;@{vm.isListType ? @drawable/list : @drawable/card}&#34; drawab
         
           
           
+          <h4 class="see-also">See also</h4>
+          <ul>
+          
+            <li><a href="/post/know-when-worked-1/">하면서 배운것들 #1</a></li>
+          
+          </ul>
+          
         
       </article>
 
@@ -368,13 +388,9 @@ app:imageRes=&#34;@{vm.isListType ? @drawable/list : @drawable/card}&#34; drawab
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="https://yongju-jin.github.io/post/rxbinding-toggle/" data-toggle="tooltip" data-placement="top" title="[RxBinding2] ToggleButton에서 on/off Observable 생성하기.">&larr; Previous Post</a>
+              <a href="https://yongju-jin.github.io/post/know-when-worked-1/" data-toggle="tooltip" data-placement="top" title="하면서 배운것들 #1">&larr; Previous Post</a>
             </li>
           
-          
-            <li class="next">
-              <a href="https://yongju-jin.github.io/post/til_1/" data-toggle="tooltip" data-placement="top" title="[TIL #1] ThreeTenABP - 오늘날짜 구하기">Next Post &rarr;</a>
-            </li>
           
         </ul>
       

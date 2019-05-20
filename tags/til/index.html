@@ -7,12 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Overview of all pages with the tag #android - 전문 초보 개발자</title>
-  <meta property="og:title" content="Overview of all pages with the tag #android" />
-  <meta name="twitter:title" content="Overview of all pages with the tag #android" />
-  <meta name="description" content="Overview of all pages with the tag #android, such as: [TIL #1] ThreeTenABP - 오늘날짜 구하기">
-  <meta property="og:description" content="Overview of all pages with the tag #android, such as: [TIL #1] ThreeTenABP - 오늘날짜 구하기">
-  <meta name="twitter:description" content="Overview of all pages with the tag #android, such as: [TIL #1] ThreeTenABP - 오늘날짜 구하기"><script type="application/ld+json">
+  <title>Overview of all pages with the tag #TIL - 전문 초보 개발자</title>
+  <meta property="og:title" content="Overview of all pages with the tag #TIL" />
+  <meta name="twitter:title" content="Overview of all pages with the tag #TIL" />
+  <meta name="description" content="Overview of all pages with the tag #TIL, such as: [TIL #1] ThreeTenABP - 오늘날짜 구하기">
+  <meta property="og:description" content="Overview of all pages with the tag #TIL, such as: [TIL #1] ThreeTenABP - 오늘날짜 구하기">
+  <meta name="twitter:description" content="Overview of all pages with the tag #TIL, such as: [TIL #1] ThreeTenABP - 오늘날짜 구하기"><script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "WebSite",
@@ -33,12 +33,12 @@
 }
 </script>
 
-<meta property="og:title" content="android" />
-<meta property="og:url" content="https://yongju-jin.github.io/tags/android/" />
+<meta property="og:title" content="TIL" />
+<meta property="og:url" content="https://yongju-jin.github.io/tags/til/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="전문 초보 개발자" />
 
-  <meta name="twitter:title" content="android" />
+  <meta name="twitter:title" content="TIL" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@y0n9ju" />
   <meta name="twitter:creator" content="@y0n9ju" />
@@ -46,7 +46,7 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@y0n9ju" />
   <meta name="twitter:creator" content="@y0n9ju" />
-  <meta property="og:url" content="https://yongju-jin.github.io/tags/android/" />
+  <meta property="og:url" content="https://yongju-jin.github.io/tags/til/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="전문 초보 개발자" />
 
@@ -165,7 +165,7 @@
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="tags-heading">
               
-                <h1>android</h1>
+                <h1>TIL</h1>
               
               
                 <hr class="small">
@@ -239,115 +239,6 @@ val today = LocalDate.now() val year = today.year val month = today.monthValue v
 
             </article>
           
-            <article class="post-preview">
-              <a href="https://yongju-jin.github.io/post/know-when-worked-1/">
-                <h2 class="post-title">하면서 배운것들 #1</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on November 12, 2018
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;55&nbsp;words
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
-  
-  
-</span>
-
-
-              </p>
-              <div class="post-entry">
-                
-                  
-
-<h2 id="databinding-drawable">Databinding &amp; drawable</h2>
-
-<p>databindig에서 drawable을 지정해줘야 할 필요가 있는 경우 아래와 같이 사용할 수 있음.</p>
-<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml">app:imageRes=&#34;@{vm.isListType ? @drawable/list : @drawable/card}&#34;</code></pre></div>
-<p>drawable을 지정할 떄는 @drawable/<em>filename</em> 이렇게 사용할 수 있음.<br />
-위와 같이 isLisType이 변경될 떄 drawable resource도 변경되도록 할 수 있음.</p>
-
-<p>imageRes adapter는</p>
-<div class="highlight"><pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="n">@BindingAdapter</span><span class="p">(</span><span class="s">&#34;imageRes&#34;</span><span class="p">)</span>
-<span class="k">fun</span> <span class="nf">ImageView</span><span class="p">.</span><span class="n">setImageRes</span><span class="p">(</span><span class="n">drawable</span><span class="p">:</span> <span class="n">Drawable</span><span class="p">?)</span> <span class="p">{</span>
-    <span class="n">GlideApp</span><span class="p">.</span><span class="n">with</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">context</span><span class="p">).</span><span class="n">load</span><span class="p">(</span><span class="n">drawable</span><span class="p">)</span>
-        <span class="p">.</span><span class="n">error</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="n">drawable</span><span class="p">.</span><span class="n">circle_wrap</span><span class="p">)</span>
-        <span class="p">.</span><span class="n">diskCacheStrategy</span><span class="p">(</span><span class="n">DiskCacheStrategy</span><span class="p">.</span><span class="n">AUTOMATIC</span><span class="p">).</span><span class="n">into</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
-<span class="p">}</span></code></pre></div>
-<p>parameter를 Drawable로 받아서 처리하면 됨.</p>
-
-                
-              </div>
-
-              
-                <div class="blog-tags">
-                  
-                    <a href="https://yongju-jin.github.io//tags/android/">android</a>&nbsp;
-                  
-                    <a href="https://yongju-jin.github.io//tags/databinding/">databinding</a>&nbsp;
-                  
-                </div>
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="https://yongju-jin.github.io/post/rxbinding-toggle/">
-                <h2 class="post-title">[RxBinding2] ToggleButton에서 on/off Observable 생성하기.</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on November 12, 2017
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;205&nbsp;words
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
-  
-  
-</span>
-
-
-              </p>
-              <div class="post-entry">
-                
-                  [RxBinding2] ToggleButton에서 on/off Observable 생성하기. toggle button 에서 on/off Observabel을 분리하기 위해서 아래와 같이 하면
-val obFuel1 = tb_fuel1.checkedChanges() obFuel1.filter { Log.d(TAG, &#34;[whenFueLift] $it&#34;) it }.subscribe { Log.d(TAG, &#34;[whenFueLiftSub] $it&#34;) } obFuel1.filter { Log.d(TAG, &#34;[whenFueDown] $it&#34;) !it }.subscribe { Log.d(TAG, &#34;[whenFueDownSub] $it&#34;) }D/FuelPump01: [whenFueLift] false D/FuelPump01: [whenFueDown] false D/FuelPump01: [whenFueDownSub] false D/FuelPump01: [whenFueDown] true D/FuelPump01: [whenFueDown] false D/FuelPump01: [whenFueDownSub] false 위와 같은 결과를 얻게 된다. 하나의 Observabe에 여러개의 subscriber가 붙을 수는 없다.
-                  <a href="https://yongju-jin.github.io/post/rxbinding-toggle/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-                <div class="blog-tags">
-                  
-                    <a href="https://yongju-jin.github.io//tags/rx/">Rx</a>&nbsp;
-                  
-                    <a href="https://yongju-jin.github.io//tags/android/">Android</a>&nbsp;
-                  
-                </div>
-              
-
-            </article>
-          
         </div>
         
       </div>
@@ -394,7 +285,7 @@ val obFuel1 = tb_fuel1.checkedChanges() obFuel1.filter { Log.d(TAG, &#34;[whenFu
               </li>
           
           <li>
-            <a href="/tags/android/index.xml" title="RSS">
+            <a href="/tags/til/index.xml" title="RSS">
               <span class="fa-stack fa-lg">
                 <i class="fas fa-circle fa-stack-2x"></i>
                 <i class="fas fa-rss fa-stack-1x fa-inverse"></i>

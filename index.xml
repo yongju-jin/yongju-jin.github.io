@@ -8,10 +8,25 @@
     <language>en-us</language>
     <managingEditor>yong8521@gmail.com</managingEditor>
     <webMaster>yong8521@gmail.com</webMaster>
-    <lastBuildDate>Mon, 12 Nov 2018 17:56:29 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 21 May 2019 00:20:21 +0900</lastBuildDate>
     
 	<atom:link href="https://yongju-jin.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[TIL #1] ThreeTenABP - 오늘날짜 구하기</title>
+      <link>https://yongju-jin.github.io/post/til_1/</link>
+      <pubDate>Tue, 21 May 2019 00:20:21 +0900</pubDate>
+      <author>yong8521@gmail.com</author>
+      <guid>https://yongju-jin.github.io/post/til_1/</guid>
+      <description>ThreeTenABP Threen Ten Java8에 포함된 날짜 시간을 계산하는 라이브러리로 보인다.
+찾아보다가 알게된 라이브러리로 Android에서 사용하기 위해서 JakeWharton 님께서
+Android 에 맞게 backport 하신 라이브러리다.
+링크
+오늘 사용한 내용은 오늘의 날짜를 가져오는 방법인데 정말 간단하다
+val today = LocalDate.now() val year = today.year val month = today.monthValue val day today.dayOfMonth 이밖에도 날짜 더하기, 뺴기 등등 편한 API가 많이 제공되고 있다.
+추후 날짜 더하기 및 기타 날짜 관련 추가작업을 진행할 때 사용해 봐야겠다.</description>
+    </item>
     
     <item>
       <title>하면서 배운것들 #1</title>
