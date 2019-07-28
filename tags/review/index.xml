@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>review on 전문 초보 개발자</title>
+    <link>https://yongju-jin.github.io/tags/review/</link>
+    <description>Recent content in review on 전문 초보 개발자</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>yong8521@gmail.com</managingEditor>
+    <webMaster>yong8521@gmail.com</webMaster>
+    <lastBuildDate>Mon, 30 Oct 2017 17:56:29 +0900</lastBuildDate>
+    
+	<atom:link href="https://yongju-jin.github.io/tags/review/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>프로그래머의 길, 멘토에게 묻다</title>
+      <link>https://yongju-jin.github.io/post/book-review-mentor/</link>
+      <pubDate>Mon, 30 Oct 2017 17:56:29 +0900</pubDate>
+      <author>yong8521@gmail.com</author>
+      <guid>https://yongju-jin.github.io/post/book-review-mentor/</guid>
+      <description>프로그래머의 길, 멘토에게 묻다 내가 이 책을 알게되고 접하게 된건 facebook에 있는 책 추천 글을 보고 나서다. 내 facebook은 여러 개발자 분들을 팔로우 하고 있는데(sns를 하지 않기 때문에 친구는 거의 없고 여러 개발자, 그룹 글들이 거의 대부분), 그 중 한 분께서 추천하는 도서에 대한 글을 보고 알게 되었다.
+사실 난 이런 류(너가 잘되기 위해서는 이렇게 저렇게 해야해라는 식)의 책을 좋아하지 않는다. 다 비슷한 내용이고 결국 실제로 행동이 더 중요하다고 생각했기 때문에, 이런 류의 책을 읽는 시간에 다른 책을 읽는게 더 좋다고 생각했었다.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>[RxBinding2] ToggleButton에서 on/off Observable 생성하기. - 전문 초보 개발자</title>
+  <meta property="og:title" content="[RxBinding2] ToggleButton에서 on/off Observable 생성하기." />
+  <meta name="twitter:title" content="[RxBinding2] ToggleButton에서 on/off Observable 생성하기." />
+  <meta name="description" content="[RxBinding2] ToggleButton에서 on/off Observable 생성하기. toggle button 에서 on/off Observabel을 분리하기 위해서 아래와 같이 하면
+val obFuel1 = tb_fuel1.checkedChanges() obFuel1.filter { Log.d(TAG, &#34;[whenFueLift] $it&#34;) it }.subscribe { Log.d(TAG, &#34;[whenFueLiftSub] $it&#34;) } obFuel1.filter { Log.d(TAG, &#34;[whenFueDown] $it&#34;) !it }.subscribe { Log.d(TAG, &#34;[whenFueDownSub] $it&#34;) }D/FuelPump01: [whenFueLift] false D/FuelPump01: [whenFueDown] false D/FuelPump01: [whenFueDownSub] false D/FuelPump01: [whenFueDown] true D/FuelPump01: [whenFueDown] false D/FuelPump01: [whenFueDownSub] false 위와 같은 결과를 얻게 된다. 하나의 Observabe에 여러개의 subscriber가 붙을 수는 없다.">
+  <meta property="og:description" content="[RxBinding2] ToggleButton에서 on/off Observable 생성하기. toggle button 에서 on/off Observabel을 분리하기 위해서 아래와 같이 하면
+val obFuel1 = tb_fuel1.checkedChanges() obFuel1.filter { Log.d(TAG, &#34;[whenFueLift] $it&#34;) it }.subscribe { Log.d(TAG, &#34;[whenFueLiftSub] $it&#34;) } obFuel1.filter { Log.d(TAG, &#34;[whenFueDown] $it&#34;) !it }.subscribe { Log.d(TAG, &#34;[whenFueDownSub] $it&#34;) }D/FuelPump01: [whenFueLift] false D/FuelPump01: [whenFueDown] false D/FuelPump01: [whenFueDownSub] false D/FuelPump01: [whenFueDown] true D/FuelPump01: [whenFueDown] false D/FuelPump01: [whenFueDownSub] false 위와 같은 결과를 얻게 된다. 하나의 Observabe에 여러개의 subscriber가 붙을 수는 없다.">
+  <meta name="twitter:description" content="[RxBinding2] ToggleButton에서 on/off Observable 생성하기. toggle button 에서 on/off Observabel을 분리하기 위해서 아래와 같이 하면
+val obFuel1 = tb_fuel1.checkedChanges() obFuel1.filter { Log.d(TAG, &#34;[whenFueLift] …"><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "전문 초보 개발자",
+    
+    "url": "https:\/\/yongju-jin.github.io\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/yongju-jin.github.io\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/yongju-jin.github.io\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/yongju-jin.github.io\/post\/rxbinding-toggle\/",
+          "name": "[ rx binding2] toggle button에서 on\/off observable 생성하기."
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : ""
+  },
+  "headline": "[RxBinding2] ToggleButton에서 on\/off Observable 생성하기.",
+  "description" : "[RxBinding2] ToggleButton에서 on\/off Observable 생성하기. toggle button 에서 on\/off Observabel을 분리하기 위해서 아래와 같이 하면\nval obFuel1 = tb_fuel1.checkedChanges() obFuel1.filter { Log.d(TAG, \x26#34;[whenFueLift] $it\x26#34;) it }.subscribe { Log.d(TAG, \x26#34;[whenFueLiftSub] $it\x26#34;) } obFuel1.filter { Log.d(TAG, \x26#34;[whenFueDown] $it\x26#34;) !it }.subscribe { Log.d(TAG, \x26#34;[whenFueDownSub] $it\x26#34;) }D\/FuelPump01: [whenFueLift] false D\/FuelPump01: [whenFueDown] false D\/FuelPump01: [whenFueDownSub] false D\/FuelPump01: [whenFueDown] true D\/FuelPump01: [whenFueDown] false D\/FuelPump01: [whenFueDownSub] false 위와 같은 결과를 얻게 된다. 하나의 Observabe에 여러개의 subscriber가 붙을 수는 없다.",
+  "inLanguage" : "en",
+  "wordCount":  205 ,
+  "datePublished" : "2017-11-12T17:56:29",
+  "dateModified" : "2017-11-12T17:56:29",
+  "image" : "https:\/\/yongju-jin.github.io\/",
+  "keywords" : [ "Rx, Android" ],
+  "mainEntityOfPage" : "https:\/\/yongju-jin.github.io\/post\/rxbinding-toggle\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/yongju-jin.github.io\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/yongju-jin.github.io\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="[RxBinding2] ToggleButton에서 on/off Observable 생성하기." />
+<meta property="og:description" content="[RxBinding2] ToggleButton에서 on/off Observable 생성하기. toggle button 에서 on/off Observabel을 분리하기 위해서 아래와 같이 하면
+val obFuel1 = tb_fuel1.checkedChanges() obFuel1.filter { Log.d(TAG, &#34;[whenFueLift] $it&#34;) it }.subscribe { Log.d(TAG, &#34;[whenFueLiftSub] $it&#34;) } obFuel1.filter { Log.d(TAG, &#34;[whenFueDown] $it&#34;) !it }.subscribe { Log.d(TAG, &#34;[whenFueDownSub] $it&#34;) }D/FuelPump01: [whenFueLift] false D/FuelPump01: [whenFueDown] false D/FuelPump01: [whenFueDownSub] false D/FuelPump01: [whenFueDown] true D/FuelPump01: [whenFueDown] false D/FuelPump01: [whenFueDownSub] false 위와 같은 결과를 얻게 된다. 하나의 Observabe에 여러개의 subscriber가 붙을 수는 없다.">
+<meta property="og:url" content="https://yongju-jin.github.io/post/rxbinding-toggle/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="전문 초보 개발자" />
+
+  <meta name="twitter:title" content="[RxBinding2] ToggleButton에서 on/off Observable 생성하기." />
+  <meta name="twitter:description" content="[RxBinding2] ToggleButton에서 on/off Observable 생성하기. toggle button 에서 on/off Observabel을 분리하기 위해서 아래와 같이 하면
+val obFuel1 = tb_fuel1.checkedChanges() obFuel1.filter { Log.d(TAG, &#34;[whenFueLift] …">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@y0n9ju" />
+  <meta name="twitter:creator" content="@y0n9ju" />
+  <link href='https://yongju-jin.github.io/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@y0n9ju" />
+  <meta name="twitter:creator" content="@y0n9ju" />
+  <meta property="og:url" content="https://yongju-jin.github.io/post/rxbinding-toggle/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="전문 초보 개발자" />
+
+  <meta name="generator" content="Hugo 0.55.6" />
+  <link rel="alternate" href="https://yongju-jin.github.io/index.xml" type="application/rss+xml" title="전문 초보 개발자"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://yongju-jin.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://yongju-jin.github.io/css/highlight.min.css" /><link rel="stylesheet" href="https://yongju-jin.github.io/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://yongju-jin.github.io/">전문 초보 개발자</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="About" href="/about">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>[RxBinding2] ToggleButton에서 on/off Observable 생성하기.</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on November 12, 2017
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;205&nbsp;words
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<h1 id="rxbinding2-togglebutton에서-on-off-observable-생성하기">[RxBinding2] ToggleButton에서 on/off Observable 생성하기.</h1>
+
+<p>toggle button 에서 on/off Observabel을 분리하기 위해서 아래와 같이 하면</p>
+<div class="highlight"><pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">val</span> <span class="py">obFuel1</span> <span class="p">=</span> <span class="n">tb_fuel1</span><span class="p">.</span><span class="n">checkedChanges</span><span class="p">()</span>
+<span class="n">obFuel1</span><span class="p">.</span><span class="n">filter</span> <span class="p">{</span>
+  <span class="n">Log</span><span class="p">.</span><span class="n">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">&#34;[whenFueLift] $it&#34;</span><span class="p">)</span>
+  <span class="n">it</span>
+<span class="p">}.</span><span class="n">subscribe</span> <span class="p">{</span>
+  <span class="n">Log</span><span class="p">.</span><span class="n">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">&#34;[whenFueLiftSub] $it&#34;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">obFuel1</span><span class="p">.</span><span class="n">filter</span> <span class="p">{</span>
+  <span class="n">Log</span><span class="p">.</span><span class="n">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">&#34;[whenFueDown] $it&#34;</span><span class="p">)</span>
+  <span class="p">!</span><span class="n">it</span>
+<span class="p">}.</span><span class="n">subscribe</span> <span class="p">{</span>
+  <span class="n">Log</span><span class="p">.</span><span class="n">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">&#34;[whenFueDownSub] $it&#34;</span><span class="p">)</span>
+<span class="p">}</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-log" data-lang="log">D/FuelPump01: [whenFueLift] false
+D/FuelPump01: [whenFueDown] false
+D/FuelPump01: [whenFueDownSub] false
+D/FuelPump01: [whenFueDown] true
+D/FuelPump01: [whenFueDown] false
+D/FuelPump01: [whenFueDownSub] false</code></pre></div>
+<p>위와 같은 결과를 얻게 된다.
+하나의 Observabe에 여러개의 subscriber가 붙을 수는 없다. 나중에 subscriber가 등록된다면 먼저 등록된 subscriber로는 data가 전달이 되지 않는다.</p>
+<div class="highlight"><pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">val</span> <span class="py">obFuel1</span> <span class="p">=</span> <span class="n">tb_fuel1</span><span class="p">.</span><span class="n">checkedChanges</span><span class="p">().</span><span class="n">share</span><span class="p">()</span>
+<span class="n">obFuel1</span><span class="p">.</span><span class="n">filter</span> <span class="p">{</span>
+  <span class="n">Log</span><span class="p">.</span><span class="n">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">&#34;[whenFueLift] $it&#34;</span><span class="p">)</span>
+  <span class="n">it</span>
+<span class="p">}.</span><span class="n">subscribe</span> <span class="p">{</span>
+  <span class="n">Log</span><span class="p">.</span><span class="n">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">&#34;[whenFueLiftSub] $it&#34;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">obFuel1</span><span class="p">.</span><span class="n">filter</span> <span class="p">{</span>
+  <span class="n">Log</span><span class="p">.</span><span class="n">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">&#34;[whenFueDown] $it&#34;</span><span class="p">)</span>
+  <span class="p">!</span><span class="n">it</span>
+<span class="p">}.</span><span class="n">subscribe</span> <span class="p">{</span>
+  <span class="n">Log</span><span class="p">.</span><span class="n">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">&#34;[whenFueDownSub] $it&#34;</span><span class="p">)</span>
+<span class="p">}</span></code></pre></div>
+<p>이런 경우는 위 코드처럼 <code>share()</code> 를 사용하면 된다.</p>
+<div class="highlight"><pre class="chroma"><code class="language-log" data-lang="log">D/FuelPump01: [whenFueLift] true
+D/FuelPump01: [whenFueLiftSub] true
+D/FuelPump01: [whenFueDown] true
+D/FuelPump01: [whenFueLift] false
+D/FuelPump01: [whenFueDown] false
+D/FuelPump01: [whenFueDownSub] false</code></pre></div>
+<p>위 로그처럼 on/off obsevable을 생성할 수 있다.
+아래 내용은 <code>share()</code> 에 대한 java doc 내용이다.</p>
+<div class="highlight"><pre class="chroma"><code class="language-doc" data-lang="doc">Returns a new Observable that multicasts (shares) the original Observable. 
+As long as there is at least one Subscriber this Observable will be subscribed and emitting data. 
+When all subscribers have unsubscribed it will unsubscribe from the source Observable.
+This is an alias for publish().ConnectableObservable.refCount().</code></pre></div>
+<h2 id="참조-link"><em>참조 link</em></h2>
+
+<p><a href="http://reactivex.io/RxJava/javadoc/rx/Observable.html#share--">share()</a></p>
+
+<p><a href="https://blog.mindorks.com/how-to-use-rxjava-share-operator-26b08973771a">How to user RXjava share() operator?</a></p>
+
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://yongju-jin.github.io//tags/rx/">Rx</a>&nbsp;
+            
+              <a href="https://yongju-jin.github.io//tags/android/">Android</a>&nbsp;
+            
+          </div>
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2frxbinding-toggle%2f&amp;text=%5bRxBinding2%5d%20ToggleButton%ec%97%90%ec%84%9c%20on%2foff%20Observable%20%ec%83%9d%ec%84%b1%ed%95%98%ea%b8%b0.&amp;via=y0n9ju" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//plus.google.com/share?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2frxbinding-toggle%2f" target="_blank" title="Share on Google Plus">
+          <i class="fab fa-google-plus"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyongju-jin.github.io%2fpost%2frxbinding-toggle%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2frxbinding-toggle%2f&amp;title=%5bRxBinding2%5d%20ToggleButton%ec%97%90%ec%84%9c%20on%2foff%20Observable%20%ec%83%9d%ec%84%b1%ed%95%98%ea%b8%b0." target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2frxbinding-toggle%2f&amp;title=%5bRxBinding2%5d%20ToggleButton%ec%97%90%ec%84%9c%20on%2foff%20Observable%20%ec%83%9d%ec%84%b1%ed%95%98%ea%b8%b0." target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2frxbinding-toggle%2f&amp;title=%5bRxBinding2%5d%20ToggleButton%ec%97%90%ec%84%9c%20on%2foff%20Observable%20%ec%83%9d%ec%84%b1%ed%95%98%ea%b8%b0." target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2frxbinding-toggle%2f&amp;description=%5bRxBinding2%5d%20ToggleButton%ec%97%90%ec%84%9c%20on%2foff%20Observable%20%ec%83%9d%ec%84%b1%ed%95%98%ea%b8%b0." target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+              </div>
+            </section>
+        
+
+        
+          
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://yongju-jin.github.io/post/book-review-mentor/" data-toggle="tooltip" data-placement="top" title="프로그래머의 길, 멘토에게 묻다">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="https://yongju-jin.github.io/post/know-when-worked-1/" data-toggle="tooltip" data-placement="top" title="하면서 배운것들 #1">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+      
+        
+          <script src="https://utteranc.es/client.js"
+            repo="yongju-jin/blog-comments"
+            issue-term="pathname"
+            label="comment"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+          </script>
+        
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:yong8521@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/yongju-jin" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/y0n9ju" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/yongju" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2019
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://yongju-jin.github.io/">전문 초보 개발자</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.55.6</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://yongju-jin.github.io/js/main.js"></script>
+<script src="https://yongju-jin.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://yongju-jin.github.io/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
+
