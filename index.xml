@@ -8,10 +8,25 @@
     <language>en-us</language>
     <managingEditor>yong8521@gmail.com</managingEditor>
     <webMaster>yong8521@gmail.com</webMaster>
-    <lastBuildDate>Wed, 22 May 2019 00:19:01 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jul 2019 23:04:37 +0900</lastBuildDate>
     
 	<atom:link href="https://yongju-jin.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>About</title>
+      <link>https://yongju-jin.github.io/about/</link>
+      <pubDate>Tue, 23 Jul 2019 23:04:37 +0900</pubDate>
+      <author>yong8521@gmail.com</author>
+      <guid>https://yongju-jin.github.io/about/</guid>
+      <description>진용주 Android Developer email - yong8521@gmail.com github - https://github.com/yongju-jin blog - https://yongju-jin.github.io 자기소개 안드로이드 개발자로 일하고 있는 진용주 입니다. Kotlin, Rx, Clean Architecture에 관심이 많습니다
+경력 [와디즈] 2018.04 ~
+- 와디즈 안드로이드 앱 개발 담당
+- 메인 서비스 개편 시 기본 아키텍쳐(MVVM, Repository pattern) 설계 및 개발 구현
+- 기본 아키텍쳐 (MVVM) 설계 및 개발, 구현
+- 동일 component 분리 및 component DI로 주입
+- Kotlin 도입 및 Java → Kotlin 변환</description>
+    </item>
     
     <item>
       <title>[Ubuntu] tilix</title>
