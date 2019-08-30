@@ -54,12 +54,6 @@
   </url>
   
   <url>
-    <loc>https://yongju-jin.github.io/tags/android/</loc>
-    <lastmod>2019-05-21T00:20:21+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://yongju-jin.github.io/tags/til/</loc>
     <lastmod>2019-05-21T00:20:21+09:00</lastmod>
     <priority>0</priority>
@@ -68,6 +62,12 @@
   <url>
     <loc>https://yongju-jin.github.io/post/til_1/</loc>
     <lastmod>2019-05-21T00:20:21+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yongju-jin.github.io/tags/android/</loc>
+    <lastmod>2019-05-21T00:20:21+09:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>

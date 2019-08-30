@@ -21,11 +21,12 @@
       <guid>https://yongju-jin.github.io/post/how_to_post_hugo/</guid>
       <description> blog 폴더에서 아래 명령어를 실행하면
 contents/post 아래에 입력한 파일 이름의 파일이 생성됨.
-hugo new post/how_to_new_post_using_hugo.md  새로 생성된 파일에서 글 작성.
+```sh hugo new post/how_to_new_post_using_hugo.md ```  새로 생성된 파일에서 글 작성.
  local server에서 확인.
-sh // 내용이 변경되면 local 에서 바로 변경내용을 확인 할 수 있음. hugo server -D   blog respository에 push
- 추가된 post를 blog repository에 적용.
-hugo -d path  blog respository push   </description>
+```sh // 내용이 변경되면 local 에서 바로 변경내용을 확인 할 수 있음. hugo server -D ``` github blog respository에 push
+ 추가된 post를 gitub blog repository에 적용.
+```sh hugo -d path ``` github blog respository push
+  </description>
     </item>
     
     <item>
