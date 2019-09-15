@@ -7,30 +7,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Hugo에서 새로운 post를 작성하는 방법 - 전문 초보 개발자</title>
-  <meta property="og:title" content="Hugo에서 새로운 post를 작성하는 방법" />
-  <meta name="twitter:title" content="Hugo에서 새로운 post를 작성하는 방법" />
-  <meta name="description" content=" blog 폴더에서 아래 명령어를 실행하면
-contents/post 아래에 입력한 파일 이름의 파일이 생성됨.
-hugo new post/how_to_new_post_using_hugo.md 새로 생성된 파일에서 글 작성.
- local server에서 확인.
-// 내용이 변경되면 local 에서 바로 변경내용을 확인 할 수 있음. hugo server -D github blog respository에 push
- 추가된 post를 gitub blog repository에 적용.
-hugo -d path github blog respository push
-  ">
-  <meta property="og:description" content=" blog 폴더에서 아래 명령어를 실행하면
-contents/post 아래에 입력한 파일 이름의 파일이 생성됨.
-hugo new post/how_to_new_post_using_hugo.md 새로 생성된 파일에서 글 작성.
- local server에서 확인.
-// 내용이 변경되면 local 에서 바로 변경내용을 확인 할 수 있음. hugo server -D github blog respository에 push
- 추가된 post를 gitub blog repository에 적용.
-hugo -d path github blog respository push
-  ">
-  <meta name="twitter:description" content=" blog 폴더에서 아래 명령어를 실행하면
-contents/post 아래에 입력한 파일 이름의 파일이 생성됨.
-hugo new post/how_to_new_post_using_hugo.md 새로 생성된 파일에서 글 작성.
- local server에서 확인.
-// 내용이 변경되면 local 에서 바로 변경내용을 확인 할 수 있음. hugo server -D …"><script type="application/ld+json">
+  <title>코루틴 공부 #1 - 전문 초보 개발자</title>
+  <meta property="og:title" content="코루틴 공부 #1" />
+  <meta name="twitter:title" content="코루틴 공부 #1" />
+  <meta name="description" content="스스로 공부한 코루틴에 대한 내용 정리.
+1. 특징 1. 비동기 프로그래밍을 쉽게 할 수 있도록 도와줌 아래 코드처럼 쉽게 비동기 수행을 작성할 수 있음.
+lauch { } async { } withContext { } 2. 쓰레드를 사용하는 것보다 가벼움 쓰레드, 코루틴을 1대1로 비교한다면 코루틴은 새로운 쓰레드를 생성하지 않기 때문에 쓰레드를 사용하는 것보단 비교적 가볍다.
+3. 일반적인 형태의 소스코도와 동일한 방식으로 코드 작성이 가능함 아래와 같이 일반적인 형태의 코드로 작성이 가능함.">
+  <meta property="og:description" content="스스로 공부한 코루틴에 대한 내용 정리.
+1. 특징 1. 비동기 프로그래밍을 쉽게 할 수 있도록 도와줌 아래 코드처럼 쉽게 비동기 수행을 작성할 수 있음.
+lauch { } async { } withContext { } 2. 쓰레드를 사용하는 것보다 가벼움 쓰레드, 코루틴을 1대1로 비교한다면 코루틴은 새로운 쓰레드를 생성하지 않기 때문에 쓰레드를 사용하는 것보단 비교적 가볍다.
+3. 일반적인 형태의 소스코도와 동일한 방식으로 코드 작성이 가능함 아래와 같이 일반적인 형태의 코드로 작성이 가능함.">
+  <meta name="twitter:description" content="스스로 공부한 코루틴에 대한 내용 정리.
+1. 특징 1. 비동기 프로그래밍을 쉽게 할 수 있도록 도와줌 아래 코드처럼 쉽게 비동기 수행을 작성할 수 있음.
+lauch { } async { } withContext { } 2. 쓰레드를 사용하는 것보다 가벼움 쓰레드, 코루틴을 1대1 …"><script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "WebSite",
@@ -65,8 +55,8 @@ hugo new post/how_to_new_post_using_hugo.md 새로 생성된 파일에서 글 �
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "https:\/\/yongju-jin.github.io\/post\/how_to_post_hugo\/",
-          "name": "Hugo에서 새로운 post를 작성하는 방법"
+          "@id": "https:\/\/yongju-jin.github.io\/post\/learn_coroutines_1\/",
+          "name": "코루틴 공부 #1"
         }
     }]
 }
@@ -77,15 +67,15 @@ hugo new post/how_to_new_post_using_hugo.md 새로 생성된 파일에서 글 �
   "author": {
     "name" : ""
   },
-  "headline": "Hugo에서 새로운 post를 작성하는 방법",
-  "description" : " blog 폴더에서 아래 명령어를 실행하면\ncontents\/post 아래에 입력한 파일 이름의 파일이 생성됨.\nhugo new post\/how_to_new_post_using_hugo.md 새로 생성된 파일에서 글 작성.\n local server에서 확인.\n\/\/ 내용이 변경되면 local 에서 바로 변경내용을 확인 할 수 있음. hugo server -D github blog respository에 push\n 추가된 post를 gitub blog repository에 적용.\nhugo -d path github blog respository push\n  ",
+  "headline": "코루틴 공부 #1",
+  "description" : "스스로 공부한 코루틴에 대한 내용 정리.\n1. 특징 1. 비동기 프로그래밍을 쉽게 할 수 있도록 도와줌 아래 코드처럼 쉽게 비동기 수행을 작성할 수 있음.\nlauch { } async { } withContext { } 2. 쓰레드를 사용하는 것보다 가벼움 쓰레드, 코루틴을 1대1로 비교한다면 코루틴은 새로운 쓰레드를 생성하지 않기 때문에 쓰레드를 사용하는 것보단 비교적 가볍다.\n3. 일반적인 형태의 소스코도와 동일한 방식으로 코드 작성이 가능함 아래와 같이 일반적인 형태의 코드로 작성이 가능함.",
   "inLanguage" : "en",
-  "wordCount":  54 ,
-  "datePublished" : "2019-08-30T23:32:55",
-  "dateModified" : "2019-08-30T23:32:55",
+  "wordCount":  235 ,
+  "datePublished" : "2019-09-11T21:41:27",
+  "dateModified" : "2019-09-11T21:41:27",
   "image" : "https:\/\/yongju-jin.github.io\/",
-  "keywords" : [ "blog, post" ],
-  "mainEntityOfPage" : "https:\/\/yongju-jin.github.io\/post\/how_to_post_hugo\/",
+  "keywords" : [ "android, kotlin" ],
+  "mainEntityOfPage" : "https:\/\/yongju-jin.github.io\/post\/learn_coroutines_1\/",
   "publisher" : {
     "@type": "Organization",
     "name" : "https:\/\/yongju-jin.github.io\/",
@@ -99,25 +89,19 @@ hugo new post/how_to_new_post_using_hugo.md 새로 생성된 파일에서 글 �
 }
 </script>
 
-<meta property="og:title" content="Hugo에서 새로운 post를 작성하는 방법" />
-<meta property="og:description" content=" blog 폴더에서 아래 명령어를 실행하면
-contents/post 아래에 입력한 파일 이름의 파일이 생성됨.
-hugo new post/how_to_new_post_using_hugo.md 새로 생성된 파일에서 글 작성.
- local server에서 확인.
-// 내용이 변경되면 local 에서 바로 변경내용을 확인 할 수 있음. hugo server -D github blog respository에 push
- 추가된 post를 gitub blog repository에 적용.
-hugo -d path github blog respository push
-  ">
-<meta property="og:url" content="https://yongju-jin.github.io/post/how_to_post_hugo/" />
+<meta property="og:title" content="코루틴 공부 #1" />
+<meta property="og:description" content="스스로 공부한 코루틴에 대한 내용 정리.
+1. 특징 1. 비동기 프로그래밍을 쉽게 할 수 있도록 도와줌 아래 코드처럼 쉽게 비동기 수행을 작성할 수 있음.
+lauch { } async { } withContext { } 2. 쓰레드를 사용하는 것보다 가벼움 쓰레드, 코루틴을 1대1로 비교한다면 코루틴은 새로운 쓰레드를 생성하지 않기 때문에 쓰레드를 사용하는 것보단 비교적 가볍다.
+3. 일반적인 형태의 소스코도와 동일한 방식으로 코드 작성이 가능함 아래와 같이 일반적인 형태의 코드로 작성이 가능함.">
+<meta property="og:url" content="https://yongju-jin.github.io/post/learn_coroutines_1/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="전문 초보 개발자" />
 
-  <meta name="twitter:title" content="Hugo에서 새로운 post를 작성하는 방법" />
-  <meta name="twitter:description" content=" blog 폴더에서 아래 명령어를 실행하면
-contents/post 아래에 입력한 파일 이름의 파일이 생성됨.
-hugo new post/how_to_new_post_using_hugo.md 새로 생성된 파일에서 글 작성.
- local server에서 확인.
-// 내용이 변경되면 local 에서 바로 변경내용을 확인 할 수 있음. hugo server -D …">
+  <meta name="twitter:title" content="코루틴 공부 #1" />
+  <meta name="twitter:description" content="스스로 공부한 코루틴에 대한 내용 정리.
+1. 특징 1. 비동기 프로그래밍을 쉽게 할 수 있도록 도와줌 아래 코드처럼 쉽게 비동기 수행을 작성할 수 있음.
+lauch { } async { } withContext { } 2. 쓰레드를 사용하는 것보다 가벼움 쓰레드, 코루틴을 1대1 …">
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@y0n9ju" />
   <meta name="twitter:creator" content="@y0n9ju" />
@@ -125,7 +109,7 @@ hugo new post/how_to_new_post_using_hugo.md 새로 생성된 파일에서 글 �
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@y0n9ju" />
   <meta name="twitter:creator" content="@y0n9ju" />
-  <meta property="og:url" content="https://yongju-jin.github.io/post/how_to_post_hugo/" />
+  <meta property="og:url" content="https://yongju-jin.github.io/post/learn_coroutines_1/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="전문 초보 개발자" />
 
@@ -250,7 +234,7 @@ hugo new post/how_to_new_post_using_hugo.md 새로 생성된 파일에서 글 �
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
               
-                <h1>Hugo에서 새로운 post를 작성하는 방법</h1>
+                <h1>코루틴 공부 #1</h1>
               
               
               
@@ -258,13 +242,13 @@ hugo new post/how_to_new_post_using_hugo.md 새로 생성된 파일에서 글 �
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on August 30, 2019
+  <i class="fas fa-calendar"></i>&nbsp;Posted on September 11, 2019
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;54&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;235&nbsp;words
   
   
     &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
@@ -287,32 +271,93 @@ hugo new post/how_to_new_post_using_hugo.md 새로 생성된 파일에서 글 �
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <ol>
-<li><p>blog 폴더에서 아래 명령어를 실행하면<br />
-contents/post 아래에 입력한 파일 이름의 파일이 생성됨.</p>
-<div class="highlight"><pre class="chroma">hugo new post/how_to_new_post_using_hugo.md</pre></div></li>
+        
 
-<li><p>새로 생성된 파일에서 글 작성.</p></li>
+<p>스스로 공부한 코루틴에 대한 내용 정리.</p>
 
-<li><p>local server에서 확인.</p>
-<div class="highlight"><pre class="chroma">// 내용이 변경되면 local 에서 바로 변경내용을 확인 할 수 있음.
-hugo server -D</pre></div></li>
+<h2 id="1-특징">1. 특징</h2>
 
-<li><p>github blog respository에 push</p></li>
+<hr />
 
-<li><p>추가된 post를 gitub blog repository에 적용.</p>
-<div class="highlight"><pre class="chroma">hugo -d path</pre></div></li>
+<h3 id="1-비동기-프로그래밍을-쉽게-할-수-있도록-도와줌">1. 비동기 프로그래밍을 쉽게 할 수 있도록 도와줌</h3>
 
-<li><p>github blog respository push</p></li>
+<p>아래 코드처럼 쉽게 비동기 수행을 작성할 수 있음.</p>
+<div class="highlight"><pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="n">lauch</span> <span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="n">async</span> <span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="n">withContext</span> <span class="p">{</span>
+
+<span class="p">}</span></code></pre></div>
+<h3 id="2-쓰레드를-사용하는-것보다-가벼움">2. 쓰레드를 사용하는 것보다 가벼움</h3>
+
+<p>쓰레드, 코루틴을 1대1로 비교한다면 코루틴은 새로운 쓰레드를 생성하지 않기 때문에 쓰레드를 사용하는 것보단 비교적 가볍다.</p>
+
+<h3 id="3-일반적인-형태의-소스코도와-동일한-방식으로-코드-작성이-가능함">3. 일반적인 형태의 소스코도와 동일한 방식으로 코드 작성이 가능함</h3>
+
+<p>아래와 같이 일반적인 형태의 코드로 작성이 가능함.</p>
+<div class="highlight"><pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">suspend</span> <span class="k">fun</span> <span class="nf">fetchDocs</span><span class="p">()</span> <span class="p">{</span>                      <span class="c1">// Dispatchers.Main
+</span><span class="c1"></span>    <span class="k">val</span> <span class="py">result</span> <span class="p">=</span> <span class="k">get</span><span class="p">(</span><span class="s">&#34;developer.android.com&#34;</span><span class="p">)</span>  <span class="c1">// Dispatchers.Main
+</span><span class="c1"></span>    <span class="n">show</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>                               <span class="c1">// Dispatchers.Main
+</span><span class="c1"></span><span class="p">}</span>
+
+<span class="k">suspend</span> <span class="k">fun</span> <span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span> <span class="p">=</span>                 <span class="c1">// Dispatchers.Main
+</span><span class="c1"></span>    <span class="n">withContext</span><span class="p">(</span><span class="n">Dispatchers</span><span class="p">.</span><span class="n">IO</span><span class="p">)</span> <span class="p">{</span>              <span class="c1">// Dispatchers.IO (main-safety block)
+</span><span class="c1"></span>        <span class="cm">/* perform network IO here */</span>          <span class="c1">// Dispatchers.IO (main-safety block)
+</span><span class="c1"></span>    <span class="p">}</span>                                          <span class="c1">// Dispatchers.Main
+</span><span class="c1"></span><span class="p">}</span></code></pre></div>
+<h2 id="2-어려운-점">2. 어려운 점</h2>
+
+<hr />
+
+<h3 id="1-러닝커브">1. 러닝커브</h3>
+
+<p>간단하게 실행해 보는 것은 간단하지만, 잘 사용하기 위해선 세부적인 내용의 대한 이해가 필요한데 여기서 러닝코브가 크다고 생각됨.<br />
+아래 참고링크를 잘 읽어봐도 이해가 잘 되지 않음. ㅠ<br />
+ex) CoroutineContext, CoroutineScope 등등</p>
+
+<h3 id="2-예외처리에-대한-부분">2. 예외처리에 대한 부분</h3>
+
+<p>에러 및 예외처리에 대한 부분이</p>
+
+<ol>
+<li><code>try-catch</code></li>
+<li><code>Result</code> 클래스에서 체크</li>
+<li><code>CoroutineExceptionHandler</code></li>
 </ol>
+
+<p>이런 방법이 보였었는데,<br />
+1번 방법은 기존의 <code>try-catch</code>라서 익숙한 방식이고,<br />
+2벙 방법은 딱히 사용할 일이 없을 거 같고,<br />
+3번 방법은 하나의 <code>CoroutineExceptionHandler</code> 객체에서 예외처리가 가능할 것으로 보이긴 하지만,<br />
+개인적으로 생각하기에는 Rx에서 처리하는 방식이 더 좋은것처럼 보인다.</p>
+
+<hr />
+
+<p>코루틴에 대해서 블로그, 정식 문서를 이것 저것 읽고 있는데, 정리를 하면서 읽는 편이 좋을 것으로 보여서 정리 중.</p>
+
+<p>앞으로 기존 문서와 다른 문서를 보면서 추가로 알게된 내용을 내가 이해한 대로 정리가 필요할 거 같음.</p>
+
+<h3 id="참고링크"><em>참고링크</em></h3>
+
+<ul>
+<li><a href="https://kotlinlang.org/docs/reference/coroutines-overview.html">https://kotlinlang.org/docs/reference/coroutines-overview.html</a></li>
+<li><a href="https://developer.android.com/kotlin/coroutines">https://developer.android.com/kotlin/coroutines</a></li>
+<li><a href="https://medium.com/androiddevelopers/coroutines-on-android-part-ii-getting-started-3bff117176dd">https://medium.com/androiddevelopers/coroutines-on-android-part-ii-getting-started-3bff117176dd</a></li>
+<li><a href="https://proandroiddev.com/android-coroutine-recipes-33467a4302e9">https://proandroiddev.com/android-coroutine-recipes-33467a4302e9</a></li>
+</ul>
 
 
         
           <div class="blog-tags">
             
-              <a href="https://yongju-jin.github.io//tags/blog/">blog</a>&nbsp;
+              <a href="https://yongju-jin.github.io//tags/android/">android</a>&nbsp;
             
-              <a href="https://yongju-jin.github.io//tags/post/">post</a>&nbsp;
+              <a href="https://yongju-jin.github.io//tags/kotlin/">kotlin</a>&nbsp;
             
           </div>
         
@@ -327,49 +372,49 @@ hugo server -D</pre></div></li>
     <ul class="share">
       
       <li>
-        <a href="//twitter.com/share?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2fhow_to_post_hugo%2f&amp;text=Hugo%ec%97%90%ec%84%9c%20%ec%83%88%eb%a1%9c%ec%9a%b4%20post%eb%a5%bc%20%ec%9e%91%ec%84%b1%ed%95%98%eb%8a%94%20%eb%b0%a9%eb%b2%95&amp;via=y0n9ju" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2flearn_coroutines_1%2f&amp;text=%ec%bd%94%eb%a3%a8%ed%8b%b4%20%ea%b3%b5%eb%b6%80%20%231&amp;via=y0n9ju" target="_blank" title="Share on Twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//plus.google.com/share?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2fhow_to_post_hugo%2f" target="_blank" title="Share on Google Plus">
+        <a href="//plus.google.com/share?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2flearn_coroutines_1%2f" target="_blank" title="Share on Google Plus">
           <i class="fab fa-google-plus"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyongju-jin.github.io%2fpost%2fhow_to_post_hugo%2f" target="_blank" title="Share on Facebook">
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyongju-jin.github.io%2fpost%2flearn_coroutines_1%2f" target="_blank" title="Share on Facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//reddit.com/submit?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2fhow_to_post_hugo%2f&amp;title=Hugo%ec%97%90%ec%84%9c%20%ec%83%88%eb%a1%9c%ec%9a%b4%20post%eb%a5%bc%20%ec%9e%91%ec%84%b1%ed%95%98%eb%8a%94%20%eb%b0%a9%eb%b2%95" target="_blank" title="Share on Reddit">
+        <a href="//reddit.com/submit?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2flearn_coroutines_1%2f&amp;title=%ec%bd%94%eb%a3%a8%ed%8b%b4%20%ea%b3%b5%eb%b6%80%20%231" target="_blank" title="Share on Reddit">
           <i class="fab fa-reddit"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2fhow_to_post_hugo%2f&amp;title=Hugo%ec%97%90%ec%84%9c%20%ec%83%88%eb%a1%9c%ec%9a%b4%20post%eb%a5%bc%20%ec%9e%91%ec%84%b1%ed%95%98%eb%8a%94%20%eb%b0%a9%eb%b2%95" target="_blank" title="Share on LinkedIn">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2flearn_coroutines_1%2f&amp;title=%ec%bd%94%eb%a3%a8%ed%8b%b4%20%ea%b3%b5%eb%b6%80%20%231" target="_blank" title="Share on LinkedIn">
           <i class="fab fa-linkedin"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2fhow_to_post_hugo%2f&amp;title=Hugo%ec%97%90%ec%84%9c%20%ec%83%88%eb%a1%9c%ec%9a%b4%20post%eb%a5%bc%20%ec%9e%91%ec%84%b1%ed%95%98%eb%8a%94%20%eb%b0%a9%eb%b2%95" target="_blank" title="Share on StumbleUpon">
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2flearn_coroutines_1%2f&amp;title=%ec%bd%94%eb%a3%a8%ed%8b%b4%20%ea%b3%b5%eb%b6%80%20%231" target="_blank" title="Share on StumbleUpon">
           <i class="fab fa-stumbleupon"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2fhow_to_post_hugo%2f&amp;description=Hugo%ec%97%90%ec%84%9c%20%ec%83%88%eb%a1%9c%ec%9a%b4%20post%eb%a5%bc%20%ec%9e%91%ec%84%b1%ed%95%98%eb%8a%94%20%eb%b0%a9%eb%b2%95" target="_blank" title="Share on Pinterest">
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fyongju-jin.github.io%2fpost%2flearn_coroutines_1%2f&amp;description=%ec%bd%94%eb%a3%a8%ed%8b%b4%20%ea%b3%b5%eb%b6%80%20%231" target="_blank" title="Share on Pinterest">
           <i class="fab fa-pinterest"></i>
         </a>
       </li>
@@ -383,6 +428,15 @@ hugo server -D</pre></div></li>
         
           
           
+          <h4 class="see-also">See also</h4>
+          <ul>
+          
+            <li><a href="/post/til_1/">[TIL #1] ThreeTenABP - 오늘날짜 구하기</a></li>
+          
+            <li><a href="/post/know-when-worked-1/">하면서 배운것들 #1</a></li>
+          
+          </ul>
+          
         
       </article>
 
@@ -390,13 +444,9 @@ hugo server -D</pre></div></li>
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="https://yongju-jin.github.io/post/ubunt_software_1/" data-toggle="tooltip" data-placement="top" title="[Ubuntu] tilix">&larr; Previous Post</a>
+              <a href="https://yongju-jin.github.io/post/how_to_post_hugo/" data-toggle="tooltip" data-placement="top" title="Hugo에서 새로운 post를 작성하는 방법">&larr; Previous Post</a>
             </li>
           
-          
-            <li class="next">
-              <a href="https://yongju-jin.github.io/post/learn_coroutines_1/" data-toggle="tooltip" data-placement="top" title="코루틴 공부 #1">Next Post &rarr;</a>
-            </li>
           
         </ul>
       
