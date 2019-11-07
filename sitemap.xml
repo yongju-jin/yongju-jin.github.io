@@ -3,12 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://yongju-jin.github.io/tags/android/</loc>
-    <lastmod>2019-09-11T21:41:27+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://yongju-jin.github.io/post/</loc>
     <lastmod>2019-09-11T21:41:27+09:00</lastmod>
     <priority>0</priority>
@@ -16,6 +10,12 @@
   
   <url>
     <loc>https://yongju-jin.github.io/tags/</loc>
+    <lastmod>2019-09-11T21:41:27+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yongju-jin.github.io/tags/android/</loc>
     <lastmod>2019-09-11T21:41:27+09:00</lastmod>
     <priority>0</priority>
   </url>
