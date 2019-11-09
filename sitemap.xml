@@ -4,13 +4,36 @@
   
   <url>
     <loc>https://yongju-jin.github.io/post/</loc>
-    <lastmod>2019-09-11T21:41:27+09:00</lastmod>
+    <lastmod>2019-11-07T22:50:34+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yongju-jin.github.io/tags/</loc>
-    <lastmod>2019-09-11T21:41:27+09:00</lastmod>
+    <lastmod>2019-11-07T22:50:34+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yongju-jin.github.io/post/react_1/</loc>
+    <lastmod>2019-11-07T22:50:34+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yongju-jin.github.io/tags/react/</loc>
+    <lastmod>2019-11-07T22:50:34+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yongju-jin.github.io/tags/til/</loc>
+    <lastmod>2019-11-07T22:50:34+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yongju-jin.github.io/</loc>
+    <lastmod>2019-11-07T22:50:34+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -22,12 +45,6 @@
   
   <url>
     <loc>https://yongju-jin.github.io/tags/kotlin/</loc>
-    <lastmod>2019-09-11T21:41:27+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yongju-jin.github.io/</loc>
     <lastmod>2019-09-11T21:41:27+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -67,12 +84,6 @@
   <url>
     <loc>https://yongju-jin.github.io/tags/ubuntu/</loc>
     <lastmod>2019-05-22T00:19:01+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yongju-jin.github.io/tags/til/</loc>
-    <lastmod>2019-05-21T00:20:21+09:00</lastmod>
     <priority>0</priority>
   </url>
   

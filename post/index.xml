@@ -8,10 +8,20 @@
     <language>en-us</language>
     <managingEditor>yong8521@gmail.com</managingEditor>
     <webMaster>yong8521@gmail.com</webMaster>
-    <lastBuildDate>Wed, 11 Sep 2019 21:41:27 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 07 Nov 2019 22:50:34 +0900</lastBuildDate>
     
 	<atom:link href="https://yongju-jin.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[TIL-React] #1</title>
+      <link>https://yongju-jin.github.io/post/react_1/</link>
+      <pubDate>Thu, 07 Nov 2019 22:50:34 +0900</pubDate>
+      <author>yong8521@gmail.com</author>
+      <guid>https://yongju-jin.github.io/post/react_1/</guid>
+      <description>component props 가져오기 var GreeterWord = React.createClass({ render: function () { var name = this.props.name; return ( &amp;lt;div&amp;gt; &amp;lt;h1&amp;gt; Hello React From GreeterWord {name} &amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt; this is form a component &amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; ); } }); ReactDOM.render( &amp;lt;GreeterWord name=&amp;#34;yongu&amp;#34;/&amp;gt;, document.getElementById(&amp;#39;app&amp;#39;) );  this.props.name으로 name에 접근해서 {name} 으로 사용
+Default Value var GreeterWord = React.createClass({ getDefaultProps: function () { return { name: &amp;#39;React&amp;#39;, }; }, render: function () {  Default 값을 설정할 때는 getDefaultPros를 설정</description>
+    </item>
     
     <item>
       <title>코루틴 공부 #1</title>
