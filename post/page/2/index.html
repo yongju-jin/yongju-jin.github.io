@@ -7,12 +7,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Overview of all pages with the tag #codelab - 전문 초보 개발자</title>
-  <meta property="og:title" content="Overview of all pages with the tag #codelab" />
-  <meta name="twitter:title" content="Overview of all pages with the tag #codelab" />
-  <meta name="description" content="Overview of all pages with the tag #codelab, such as: Dagger With Codelab #2">
-  <meta property="og:description" content="Overview of all pages with the tag #codelab, such as: Dagger With Codelab #2">
-  <meta name="twitter:description" content="Overview of all pages with the tag #codelab, such as: Dagger With Codelab #2"><script type="application/ld+json">
+  <title>Posts - 전문 초보 개발자</title>
+  <meta property="og:title" content="Posts" />
+  <meta name="twitter:title" content="Posts" /><script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "WebSite",
@@ -33,12 +30,12 @@
 }
 </script>
 
-<meta property="og:title" content="codelab" />
-<meta property="og:url" content="https://yongju-jin.github.io/tags/codelab/" />
+<meta property="og:title" content="Posts" />
+<meta property="og:url" content="https://yongju-jin.github.io/post/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="전문 초보 개발자" />
 
-  <meta name="twitter:title" content="codelab" />
+  <meta name="twitter:title" content="Posts" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@y0n9ju" />
   <meta name="twitter:creator" content="@y0n9ju" />
@@ -46,7 +43,7 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@y0n9ju" />
   <meta name="twitter:creator" content="@y0n9ju" />
-  <meta property="og:url" content="https://yongju-jin.github.io/tags/codelab/" />
+  <meta property="og:url" content="https://yongju-jin.github.io/post/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="전문 초보 개발자" />
 
@@ -169,14 +166,31 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="tags-heading">
+            <div class="post-heading">
               
-                <h1>codelab</h1>
-              
-              
-                <hr class="small">
+                <h1>Posts</h1>
               
               
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on November 26, 2019
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;0&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;0&nbsp;words
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
+  
+  
+</span>
+
+
               
             </div>
           </div>
@@ -194,8 +208,8 @@
         <div class="posts-list">
           
             <article class="post-preview">
-              <a href="https://yongju-jin.github.io/post/dagger_2/">
-                <h2 class="post-title">Dagger With Codelab #2</h2>
+              <a href="https://yongju-jin.github.io/post/frp-stream/">
+                <h2 class="post-title">FRP에서의 STREAM</h2>
 
                 
               </a>
@@ -204,13 +218,13 @@
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on November 26, 2019
+  <i class="fas fa-calendar"></i>&nbsp;Posted on October 2, 2017
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;5&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;909&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;410&nbsp;words
   
   
     &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
@@ -222,82 +236,29 @@
               </p>
               <div class="post-entry">
                 
-                  Dagger CodeLab을 하면서 공부한 내용을 요약, 정리
-1. Injecting the graph in an Activity 보통 Dagger 그래프는 Application 클래스 안에서 생성한다. 앱이 실행되는 동안 메모리에 그래프의 객체가 존재하길 원하기 때문이다. 이런 방법으로 그래프는 앱의 lifecycle에 종속되게 된다.
-open class MyApplication : Application() { // Instance of the AppComponent that will be used by all the Activities in the project  val appComponent: AppComponent by lazy { // Creates an instance of AppComponent using its Factory constructor  // We pass the applicationContext that will be used as Context in the graph  DaggerAppComponent.
-                  <a href="https://yongju-jin.github.io/post/dagger_2/" class="post-read-more">[Read More]</a>
+                  함수형 반응형 프로그래밍: FRP 입문자를 위한 종합 안내서.
+2장의 내용을 정리한 자료 입니다.
+2.FRP의 핵심 1. 스트림 타입: 이벤트의 흐름  이벤트의 흐름을 표현한다.
+ 책에서는 데이터의 흐름을 Cell, 이벤트의 흐름을 Stream이라고 표현하지만 다른 곳에서는 모두 데이트와 이벤트의 흐름을 모두 Strean이라고 말하고 두 가지를 분류하지 않음.
+ Streams are cheap and ubiquitous, anything can be a stream: variables, user inputs, properties, caches, data structures. Rx에서 Observable이 아닐까?  example 1.
+                  <a href="https://yongju-jin.github.io/post/frp-stream/" class="post-read-more">[Read More]</a>
                 
               </div>
 
-              
-                <div class="blog-tags">
-                  
-                    <a href="https://yongju-jin.github.io//tags/android/">Android</a>&nbsp;
-                  
-                    <a href="https://yongju-jin.github.io//tags/codelab/">codelab</a>&nbsp;
-                  
-                    <a href="https://yongju-jin.github.io//tags/dagger/">dagger</a>&nbsp;
-                  
-                    <a href="https://yongju-jin.github.io//tags/di/">di</a>&nbsp;
-                  
-                </div>
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="https://yongju-jin.github.io/post/dagger_1/">
-                <h2 class="post-title">Dagger with Codelab #1</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on November 22, 2019
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;584&nbsp;words
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
-  
-  
-</span>
-
-
-              </p>
-              <div class="post-entry">
-                
-                  Dagger CodeLab을 하면서 공부한 내용을 요약, 정리
-1. Dagger 설정 dependencies { def dagger_version = &#34;2.25.2&#34; implementation &#34;com.google.dagger:dagger:$dagger_version&#34; kapt &#34;com.google.dagger:dagger-compiler:$dagger_version&#34; } app/build.gradle에 위와 같이 dagger 관련 depency 설정을 추가.
-2. @Inject  In order to build the application graph automatically for us, Dagger needs to know how to create instances for the classes in the graph. One way to do this is by annotating the constructor of classes with @Inject.
-                  <a href="https://yongju-jin.github.io/post/dagger_1/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-                <div class="blog-tags">
-                  
-                    <a href="https://yongju-jin.github.io//tags/android/">Android</a>&nbsp;
-                  
-                    <a href="https://yongju-jin.github.io//tags/codelab/">codelab</a>&nbsp;
-                  
-                    <a href="https://yongju-jin.github.io//tags/dagger/">dagger</a>&nbsp;
-                  
-                    <a href="https://yongju-jin.github.io//tags/di/">di</a>&nbsp;
-                  
-                </div>
               
 
             </article>
           
         </div>
+        
+          <ul class="pager main-pager">
+            
+              <li class="previous">
+                <a href="https://yongju-jin.github.io/post/page/1/">&larr; Newer Posts</a>
+              </li>
+            
+            
+          </ul>
         
       </div>
     </div>
@@ -343,7 +304,7 @@ open class MyApplication : Application() { // Instance of the AppComponent that 
               </li>
           
           <li>
-            <a href="/tags/codelab/index.xml" title="RSS">
+            <a href="/post/index.xml" title="RSS">
               <span class="fa-stack fa-lg">
                 <i class="fas fa-circle fa-stack-2x"></i>
                 <i class="fas fa-rss fa-stack-1x fa-inverse"></i>

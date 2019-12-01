@@ -8,10 +8,21 @@
     <language>en-us</language>
     <managingEditor>yong8521@gmail.com</managingEditor>
     <webMaster>yong8521@gmail.com</webMaster>
-    <lastBuildDate>Fri, 22 Nov 2019 00:09:03 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 26 Nov 2019 18:20:23 +0900</lastBuildDate>
     
 	<atom:link href="https://yongju-jin.github.io/tags/dagger/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Dagger With Codelab #2</title>
+      <link>https://yongju-jin.github.io/post/dagger_2/</link>
+      <pubDate>Tue, 26 Nov 2019 18:20:23 +0900</pubDate>
+      <author>yong8521@gmail.com</author>
+      <guid>https://yongju-jin.github.io/post/dagger_2/</guid>
+      <description>Dagger CodeLab을 하면서 공부한 내용을 요약, 정리
+1. Injecting the graph in an Activity 보통 Dagger 그래프는 Application 클래스 안에서 생성한다. 앱이 실행되는 동안 메모리에 그래프의 객체가 존재하길 원하기 때문이다. 이런 방법으로 그래프는 앱의 lifecycle에 종속되게 된다.
+open class MyApplication : Application() { // Instance of the AppComponent that will be used by all the Activities in the project  val appComponent: AppComponent by lazy { // Creates an instance of AppComponent using its Factory constructor  // We pass the applicationContext that will be used as Context in the graph  DaggerAppComponent.</description>
+    </item>
     
     <item>
       <title>Dagger with Codelab #1</title>
