@@ -1,39 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Android on 전문 초보 개발자</title>
+    <title>android on 전문 초보 개발자</title>
     <link>https://yongju-jin.github.io/tags/android/</link>
-    <description>Recent content in Android on 전문 초보 개발자</description>
+    <description>Recent content in android on 전문 초보 개발자</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>yong8521@gmail.com</managingEditor>
     <webMaster>yong8521@gmail.com</webMaster>
-    <lastBuildDate>Tue, 26 Nov 2019 18:20:23 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 11 Sep 2019 21:41:27 +0900</lastBuildDate>
     
 	<atom:link href="https://yongju-jin.github.io/tags/android/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Dagger With Codelab #2</title>
-      <link>https://yongju-jin.github.io/post/dagger_2/</link>
-      <pubDate>Tue, 26 Nov 2019 18:20:23 +0900</pubDate>
-      <author>yong8521@gmail.com</author>
-      <guid>https://yongju-jin.github.io/post/dagger_2/</guid>
-      <description>Dagger CodeLab을 하면서 공부한 내용을 요약, 정리
-1. Injecting the graph in an Activity 보통 Dagger 그래프는 Application 클래스 안에서 생성한다. 앱이 실행되는 동안 메모리에 그래프의 객체가 존재하길 원하기 때문이다. 이런 방법으로 그래프는 앱의 lifecycle에 종속되게 된다.
-open class MyApplication : Application() { // Instance of the AppComponent that will be used by all the Activities in the project  val appComponent: AppComponent by lazy { // Creates an instance of AppComponent using its Factory constructor  // We pass the applicationContext that will be used as Context in the graph  DaggerAppComponent.</description>
-    </item>
-    
-    <item>
-      <title>Dagger with Codelab #1</title>
-      <link>https://yongju-jin.github.io/post/dagger_1/</link>
-      <pubDate>Fri, 22 Nov 2019 00:09:03 +0900</pubDate>
-      <author>yong8521@gmail.com</author>
-      <guid>https://yongju-jin.github.io/post/dagger_1/</guid>
-      <description>Dagger CodeLab을 하면서 공부한 내용을 요약, 정리
-1. Dagger 설정 dependencies { def dagger_version = &amp;#34;2.25.2&amp;#34; implementation &amp;#34;com.google.dagger:dagger:$dagger_version&amp;#34; kapt &amp;#34;com.google.dagger:dagger-compiler:$dagger_version&amp;#34; } app/build.gradle에 위와 같이 dagger 관련 depency 설정을 추가.
-2. @Inject  In order to build the application graph automatically for us, Dagger needs to know how to create instances for the classes in the graph. One way to do this is by annotating the constructor of classes with @Inject.</description>
-    </item>
     
     <item>
       <title>코루틴 공부 #1</title>
@@ -42,7 +20,7 @@ open class MyApplication : Application() { // Instance of the AppComponent that 
       <author>yong8521@gmail.com</author>
       <guid>https://yongju-jin.github.io/post/learn_coroutines_1/</guid>
       <description>스스로 공부한 코루틴에 대한 내용 정리.
-1. 특징 1. 비동기 프로그래밍을 쉽게 할 수 있도록 도와줌 아래 코드처럼 쉽게 비동기 수행을 작성할 수 있음.
+1. 특징  1. 비동기 프로그래밍을 쉽게 할 수 있도록 도와줌 아래 코드처럼 쉽게 비동기 수행을 작성할 수 있음.
 lauch { } async { } withContext { } 2. 쓰레드를 사용하는 것보다 가벼움 쓰레드, 코루틴을 1대1로 비교한다면 코루틴은 새로운 쓰레드를 생성하지 않기 때문에 쓰레드를 사용하는 것보단 비교적 가볍다.
 3. 일반적인 형태의 소스코도와 동일한 방식으로 코드 작성이 가능함 아래와 같이 일반적인 형태의 코드로 작성이 가능함.</description>
     </item>
@@ -82,7 +60,7 @@ imageRes adapter는
       <author>yong8521@gmail.com</author>
       <guid>https://yongju-jin.github.io/post/rxbinding-toggle/</guid>
       <description>[RxBinding2] ToggleButton에서 on/off Observable 생성하기. toggle button 에서 on/off Observabel을 분리하기 위해서 아래와 같이 하면
-val obFuel1 = tb_fuel1.checkedChanges() obFuel1.filter { Log.d(TAG, &amp;#34;[whenFueLift] $it&amp;#34;) it }.subscribe { Log.d(TAG, &amp;#34;[whenFueLiftSub] $it&amp;#34;) } obFuel1.filter { Log.d(TAG, &amp;#34;[whenFueDown] $it&amp;#34;) !it }.subscribe { Log.d(TAG, &amp;#34;[whenFueDownSub] $it&amp;#34;) }D/FuelPump01: [whenFueLift] false D/FuelPump01: [whenFueDown] false D/FuelPump01: [whenFueDownSub] false D/FuelPump01: [whenFueDown] true D/FuelPump01: [whenFueDown] false D/FuelPump01: [whenFueDownSub] false 위와 같은 결과를 얻게 된다. 하나의 Observabe에 여러개의 subscriber가 붙을 수는 없다.</description>
+val obFuel1 = tb_fuel1.checkedChanges() obFuel1.filter { Log.d(TAG, &amp;#34;[whenFueLift] $it&amp;#34;) it }.subscribe { Log.d(TAG, &amp;#34;[whenFueLiftSub] $it&amp;#34;) } obFuel1.filter { Log.d(TAG, &amp;#34;[whenFueDown] $it&amp;#34;) !it }.subscribe { Log.d(TAG, &amp;#34;[whenFueDownSub] $it&amp;#34;) } D/FuelPump01: [whenFueLift] false D/FuelPump01: [whenFueDown] false D/FuelPump01: [whenFueDownSub] false D/FuelPump01: [whenFueDown] true D/FuelPump01: [whenFueDown] false D/FuelPump01: [whenFueDownSub] false 위와 같은 결과를 얻게 된다. 하나의 Observabe에 여러개의 subscriber가 붙을 수는 없다.</description>
     </item>
     
   </channel>

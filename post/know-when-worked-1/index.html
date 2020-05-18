@@ -114,7 +114,7 @@ app:imageRes=&#34;@{vm.isListType ? @drawable/list : @drawable/card}&#34; drawab
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="전문 초보 개발자" />
 
-  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="generator" content="Hugo 0.70.0" />
   <link rel="alternate" href="https://yongju-jin.github.io/index.xml" type="application/rss+xml" title="전문 초보 개발자"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://yongju-jin.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -272,23 +272,19 @@ app:imageRes=&#34;@{vm.isListType ? @drawable/list : @drawable/card}&#34; drawab
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        
-
-<h2 id="databinding-drawable">Databinding &amp; drawable</h2>
-
+        <h2 id="databinding--drawable">Databinding &amp; drawable</h2>
 <p>databindig에서 drawable을 지정해줘야 할 필요가 있는 경우 아래와 같이 사용할 수 있음.</p>
-<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml">app:imageRes=&#34;@{vm.isListType ? @drawable/list : @drawable/card}&#34;</code></pre></div>
-<p>drawable을 지정할 떄는 @drawable/<em>filename</em> 이렇게 사용할 수 있음.<br />
+<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml">app:imageRes=&#34;@{vm.isListType ? @drawable/list : @drawable/card}&#34;
+</code></pre></div><p>drawable을 지정할 떄는 @drawable/<em>filename</em> 이렇게 사용할 수 있음.<br>
 위와 같이 isLisType이 변경될 떄 drawable resource도 변경되도록 할 수 있음.</p>
-
 <p>imageRes adapter는</p>
 <div class="highlight"><pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="n">@BindingAdapter</span><span class="p">(</span><span class="s">&#34;imageRes&#34;</span><span class="p">)</span>
 <span class="k">fun</span> <span class="nf">ImageView</span><span class="p">.</span><span class="n">setImageRes</span><span class="p">(</span><span class="n">drawable</span><span class="p">:</span> <span class="n">Drawable</span><span class="p">?)</span> <span class="p">{</span>
     <span class="n">GlideApp</span><span class="p">.</span><span class="n">with</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">context</span><span class="p">).</span><span class="n">load</span><span class="p">(</span><span class="n">drawable</span><span class="p">)</span>
         <span class="p">.</span><span class="n">error</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="n">drawable</span><span class="p">.</span><span class="n">circle_wrap</span><span class="p">)</span>
         <span class="p">.</span><span class="n">diskCacheStrategy</span><span class="p">(</span><span class="n">DiskCacheStrategy</span><span class="p">.</span><span class="n">AUTOMATIC</span><span class="p">).</span><span class="n">into</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
-<span class="p">}</span></code></pre></div>
-<p>parameter를 Drawable로 받아서 처리하면 됨.</p>
+<span class="p">}</span>
+</code></pre></div><p>parameter를 Drawable로 받아서 처리하면 됨.</p>
 
 
         
@@ -468,7 +464,7 @@ app:imageRes=&#34;@{vm.isListType ? @drawable/list : @drawable/card}&#34; drawab
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.55.6</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.70.0</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

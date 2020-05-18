@@ -47,7 +47,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="전문 초보 개발자" />
 
-  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="generator" content="Hugo 0.70.0" />
   <link rel="alternate" href="https://yongju-jin.github.io/index.xml" type="application/rss+xml" title="전문 초보 개발자"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://yongju-jin.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -176,7 +176,7 @@
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on November 26, 2019
+  <i class="fas fa-calendar"></i>&nbsp;Posted on November 7, 2019
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;0&nbsp;minutes
@@ -208,110 +208,6 @@
         <div class="posts-list">
           
             <article class="post-preview">
-              <a href="https://yongju-jin.github.io/post/dagger_2/">
-                <h2 class="post-title">Dagger With Codelab #2</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on November 26, 2019
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;5&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;909&nbsp;words
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
-  
-  
-</span>
-
-
-              </p>
-              <div class="post-entry">
-                
-                  Dagger CodeLab을 하면서 공부한 내용을 요약, 정리
-1. Injecting the graph in an Activity 보통 Dagger 그래프는 Application 클래스 안에서 생성한다. 앱이 실행되는 동안 메모리에 그래프의 객체가 존재하길 원하기 때문이다. 이런 방법으로 그래프는 앱의 lifecycle에 종속되게 된다.
-open class MyApplication : Application() { // Instance of the AppComponent that will be used by all the Activities in the project  val appComponent: AppComponent by lazy { // Creates an instance of AppComponent using its Factory constructor  // We pass the applicationContext that will be used as Context in the graph  DaggerAppComponent.
-                  <a href="https://yongju-jin.github.io/post/dagger_2/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-                <div class="blog-tags">
-                  
-                    <a href="https://yongju-jin.github.io//tags/android/">Android</a>&nbsp;
-                  
-                    <a href="https://yongju-jin.github.io//tags/codelab/">codelab</a>&nbsp;
-                  
-                    <a href="https://yongju-jin.github.io//tags/dagger/">dagger</a>&nbsp;
-                  
-                    <a href="https://yongju-jin.github.io//tags/di/">di</a>&nbsp;
-                  
-                </div>
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="https://yongju-jin.github.io/post/dagger_1/">
-                <h2 class="post-title">Dagger with Codelab #1</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on November 22, 2019
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;584&nbsp;words
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
-  
-  
-</span>
-
-
-              </p>
-              <div class="post-entry">
-                
-                  Dagger CodeLab을 하면서 공부한 내용을 요약, 정리
-1. Dagger 설정 dependencies { def dagger_version = &#34;2.25.2&#34; implementation &#34;com.google.dagger:dagger:$dagger_version&#34; kapt &#34;com.google.dagger:dagger-compiler:$dagger_version&#34; } app/build.gradle에 위와 같이 dagger 관련 depency 설정을 추가.
-2. @Inject  In order to build the application graph automatically for us, Dagger needs to know how to create instances for the classes in the graph. One way to do this is by annotating the constructor of classes with @Inject.
-                  <a href="https://yongju-jin.github.io/post/dagger_1/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-                <div class="blog-tags">
-                  
-                    <a href="https://yongju-jin.github.io//tags/android/">Android</a>&nbsp;
-                  
-                    <a href="https://yongju-jin.github.io//tags/codelab/">codelab</a>&nbsp;
-                  
-                    <a href="https://yongju-jin.github.io//tags/dagger/">dagger</a>&nbsp;
-                  
-                    <a href="https://yongju-jin.github.io//tags/di/">di</a>&nbsp;
-                  
-                </div>
-              
-
-            </article>
-          
-            <article class="post-preview">
               <a href="https://yongju-jin.github.io/post/react_1/">
                 <h2 class="post-title">[TIL-React] #1</h2>
 
@@ -340,8 +236,8 @@ open class MyApplication : Application() { // Instance of the AppComponent that 
               </p>
               <div class="post-entry">
                 
-                  component props 가져오기 var GreeterWord = React.createClass({ render: function () { var name = this.props.name; return ( &lt;div&gt; &lt;h1&gt; Hello React From GreeterWord {name} &lt;/h1&gt; &lt;p&gt; this is form a component &lt;/p&gt; &lt;/div&gt; ); } }); ReactDOM.render( &lt;GreeterWord name=&#34;yongu&#34;/&gt;, document.getElementById(&#39;app&#39;) );  this.props.name으로 name에 접근해서 {name} 으로 사용
-Default Value var GreeterWord = React.createClass({ getDefaultProps: function () { return { name: &#39;React&#39;, }; }, render: function () {  Default 값을 설정할 때는 getDefaultPros를 설정
+                  component props 가져오기 var GreeterWord = React.createClass({ render: function () { var name = this.props.name; return ( &lt;div&gt; &lt;h1&gt; Hello React From GreeterWord {name} &lt;/h1&gt; &lt;p&gt; this is form a component &lt;/p&gt; &lt;/div&gt; ); } }); ReactDOM.render( &lt;GreeterWord name=&#34;yongu&#34;/&gt;, document.getElementById(&#39;app&#39;) ); this.props.name으로 name에 접근해서 {name} 으로 사용
+Default Value var GreeterWord = React.createClass({ getDefaultProps: function () { return { name: &#39;React&#39;, }; }, render: function () { Default 값을 설정할 때는 getDefaultPros를 설정
                   <a href="https://yongju-jin.github.io/post/react_1/" class="post-read-more">[Read More]</a>
                 
               </div>
@@ -388,7 +284,7 @@ Default Value var GreeterWord = React.createClass({ getDefaultProps: function ()
               <div class="post-entry">
                 
                   스스로 공부한 코루틴에 대한 내용 정리.
-1. 특징 1. 비동기 프로그래밍을 쉽게 할 수 있도록 도와줌 아래 코드처럼 쉽게 비동기 수행을 작성할 수 있음.
+1. 특징  1. 비동기 프로그래밍을 쉽게 할 수 있도록 도와줌 아래 코드처럼 쉽게 비동기 수행을 작성할 수 있음.
 lauch { } async { } withContext { } 2. 쓰레드를 사용하는 것보다 가벼움 쓰레드, 코루틴을 1대1로 비교한다면 코루틴은 새로운 쓰레드를 생성하지 않기 때문에 쓰레드를 사용하는 것보단 비교적 가볍다.
 3. 일반적인 형태의 소스코도와 동일한 방식으로 코드 작성이 가능함 아래와 같이 일반적인 형태의 코드로 작성이 가능함.
                   <a href="https://yongju-jin.github.io/post/learn_coroutines_1/" class="post-read-more">[Read More]</a>
@@ -436,25 +332,14 @@ lauch { } async { } withContext { } 2. 쓰레드를 사용하는 것보다 가�
               </p>
               <div class="post-entry">
                 
-                  <ol>
-<li><p>blog 폴더에서 아래 명령어를 실행하면<br />
-contents/post 아래에 입력한 파일 이름의 파일이 생성됨.</p>
-<div class="highlight"><pre class="chroma">hugo new post/how_to_new_post_using_hugo.md</pre></div></li>
-
-<li><p>새로 생성된 파일에서 글 작성.</p></li>
-
-<li><p>local server에서 확인.</p>
-<div class="highlight"><pre class="chroma">// 내용이 변경되면 local 에서 바로 변경내용을 확인 할 수 있음.
-hugo server -D</pre></div></li>
-
-<li><p>github blog respository에 push</p></li>
-
-<li><p>추가된 post를 gitub blog repository에 적용.</p>
-<div class="highlight"><pre class="chroma">hugo -d path</pre></div></li>
-
-<li><p>github blog respository push</p></li>
-</ol>
-
+                  blog 폴더에서 아래 명령어를 실행하면
+contents/post 아래에 입력한 파일 이름의 파일이 생성됨.
+ hugo new post/how_to_new_post_using_hugo.md    새로 생성된 파일에서 글 작성.
+  local server에서 확인.
+ // 내용이 변경되면 local 에서 바로 변경내용을 확인 할 수 있음. hugo server -D    github blog respository에 push
+  추가된 post를 gitub blog repository에 적용.
+ hugo -d path    github blog respository push
+                  <a href="https://yongju-jin.github.io/post/how_to_post_hugo/" class="post-read-more">[Read More]</a>
                 
               </div>
 
@@ -501,8 +386,7 @@ hugo server -D</pre></div></li>
                 
                   Unbuntu Software #1 - Tilix 기존에 mac을 사용하다가 새로 컴퓨터를 장만하게 되었는데,
 다음 두 가지 이유로 mac 을 포기하게 되었다.
- 가격
- 터치바  처음 mac을 살 떄도 리퍼비쉬로 200만원 정도의 가격에 구입했었던 거 같다. 다시 mac을 구입하려고 보니 mac의 가격은 200만원으로는 살 수 없었다.
+ 가격 터치바  처음 mac을 살 떄도 리퍼비쉬로 200만원 정도의 가격에 구입했었던 거 같다. 다시 mac을 구입하려고 보니 mac의 가격은 200만원으로는 살 수 없었다.
 그래서 대안을 찾던 중 Dell의 xps를 알게 되었고, 관심이 갔지만 xps 역시 비싼 가격에 포기하고 있었다. 그러던중 인스타 광고에서 xps 리퍼를 파는 곳을 보게 되었고, 정식 A/S 까지 받을 수 있다는 사실까지 확인해서 바로 지르게 되었다.
                   <a href="https://yongju-jin.github.io/post/ubunt_software_1/" class="post-read-more">[Read More]</a>
                 
@@ -599,23 +483,19 @@ val today = LocalDate.now() val year = today.year val month = today.monthValue v
               </p>
               <div class="post-entry">
                 
-                  
-
-<h2 id="databinding-drawable">Databinding &amp; drawable</h2>
-
+                  <h2 id="databinding--drawable">Databinding &amp; drawable</h2>
 <p>databindig에서 drawable을 지정해줘야 할 필요가 있는 경우 아래와 같이 사용할 수 있음.</p>
-<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml">app:imageRes=&#34;@{vm.isListType ? @drawable/list : @drawable/card}&#34;</code></pre></div>
-<p>drawable을 지정할 떄는 @drawable/<em>filename</em> 이렇게 사용할 수 있음.<br />
+<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml">app:imageRes=&#34;@{vm.isListType ? @drawable/list : @drawable/card}&#34;
+</code></pre></div><p>drawable을 지정할 떄는 @drawable/<em>filename</em> 이렇게 사용할 수 있음.<br>
 위와 같이 isLisType이 변경될 떄 drawable resource도 변경되도록 할 수 있음.</p>
-
 <p>imageRes adapter는</p>
 <div class="highlight"><pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="n">@BindingAdapter</span><span class="p">(</span><span class="s">&#34;imageRes&#34;</span><span class="p">)</span>
 <span class="k">fun</span> <span class="nf">ImageView</span><span class="p">.</span><span class="n">setImageRes</span><span class="p">(</span><span class="n">drawable</span><span class="p">:</span> <span class="n">Drawable</span><span class="p">?)</span> <span class="p">{</span>
     <span class="n">GlideApp</span><span class="p">.</span><span class="n">with</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">context</span><span class="p">).</span><span class="n">load</span><span class="p">(</span><span class="n">drawable</span><span class="p">)</span>
         <span class="p">.</span><span class="n">error</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="n">drawable</span><span class="p">.</span><span class="n">circle_wrap</span><span class="p">)</span>
         <span class="p">.</span><span class="n">diskCacheStrategy</span><span class="p">(</span><span class="n">DiskCacheStrategy</span><span class="p">.</span><span class="n">AUTOMATIC</span><span class="p">).</span><span class="n">into</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
-<span class="p">}</span></code></pre></div>
-<p>parameter를 Drawable로 받아서 처리하면 됨.</p>
+<span class="p">}</span>
+</code></pre></div><p>parameter를 Drawable로 받아서 처리하면 됨.</p>
 
                 
               </div>
@@ -649,7 +529,7 @@ val today = LocalDate.now() val year = today.year val month = today.monthValue v
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;205&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;206&nbsp;words
   
   
     &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
@@ -662,7 +542,7 @@ val today = LocalDate.now() val year = today.year val month = today.monthValue v
               <div class="post-entry">
                 
                   [RxBinding2] ToggleButton에서 on/off Observable 생성하기. toggle button 에서 on/off Observabel을 분리하기 위해서 아래와 같이 하면
-val obFuel1 = tb_fuel1.checkedChanges() obFuel1.filter { Log.d(TAG, &#34;[whenFueLift] $it&#34;) it }.subscribe { Log.d(TAG, &#34;[whenFueLiftSub] $it&#34;) } obFuel1.filter { Log.d(TAG, &#34;[whenFueDown] $it&#34;) !it }.subscribe { Log.d(TAG, &#34;[whenFueDownSub] $it&#34;) }D/FuelPump01: [whenFueLift] false D/FuelPump01: [whenFueDown] false D/FuelPump01: [whenFueDownSub] false D/FuelPump01: [whenFueDown] true D/FuelPump01: [whenFueDown] false D/FuelPump01: [whenFueDownSub] false 위와 같은 결과를 얻게 된다. 하나의 Observabe에 여러개의 subscriber가 붙을 수는 없다.
+val obFuel1 = tb_fuel1.checkedChanges() obFuel1.filter { Log.d(TAG, &#34;[whenFueLift] $it&#34;) it }.subscribe { Log.d(TAG, &#34;[whenFueLiftSub] $it&#34;) } obFuel1.filter { Log.d(TAG, &#34;[whenFueDown] $it&#34;) !it }.subscribe { Log.d(TAG, &#34;[whenFueDownSub] $it&#34;) } D/FuelPump01: [whenFueLift] false D/FuelPump01: [whenFueDown] false D/FuelPump01: [whenFueDownSub] false D/FuelPump01: [whenFueDown] true D/FuelPump01: [whenFueDown] false D/FuelPump01: [whenFueDownSub] false 위와 같은 결과를 얻게 된다. 하나의 Observabe에 여러개의 subscriber가 붙을 수는 없다.
                   <a href="https://yongju-jin.github.io/post/rxbinding-toggle/" class="post-read-more">[Read More]</a>
                 
               </div>
@@ -726,16 +606,49 @@ val obFuel1 = tb_fuel1.checkedChanges() obFuel1.filter { Log.d(TAG, &#34;[whenFu
 
             </article>
           
+            <article class="post-preview">
+              <a href="https://yongju-jin.github.io/post/frp-stream/">
+                <h2 class="post-title">FRP에서의 STREAM</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on October 2, 2017
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;373&nbsp;words
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
+  
+  
+</span>
+
+
+              </p>
+              <div class="post-entry">
+                
+                  함수형 반응형 프로그래밍: FRP 입문자를 위한 종합 안내서.
+2장의 내용을 정리한 자료 입니다.
+ 2.FRP의 핵심 1. 스트림 타입: 이벤트의 흐름  이벤트의 흐름을 표현한다.
+ 책에서는 데이터의 흐름을 Cell, 이벤트의 흐름을 Stream이라고 표현하지만 다른 곳에서는 모두 데이트와 이벤트의 흐름을 모두 Strean이라고 말하고 두 가지를 분류하지 않음.
+ Streams are cheap and ubiquitous, anything can be a stream: variables, user inputs, properties, caches, data structures. Rx에서 Observable이 아닐까?  example 1.
+                  <a href="https://yongju-jin.github.io/post/frp-stream/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
         </div>
-        
-          <ul class="pager main-pager">
-            
-            
-              <li class="next">
-                <a href="https://yongju-jin.github.io/post/page/2/">Older Posts &rarr;</a>
-              </li>
-            
-          </ul>
         
       </div>
     </div>
@@ -805,7 +718,7 @@ val obFuel1 = tb_fuel1.checkedChanges() obFuel1.filter { Log.d(TAG, &#34;[whenFu
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.55.6</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.70.0</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

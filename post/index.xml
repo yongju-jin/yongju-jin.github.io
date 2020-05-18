@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on 전문 초보 개발자</title>
@@ -8,32 +8,10 @@
     <language>en-us</language>
     <managingEditor>yong8521@gmail.com</managingEditor>
     <webMaster>yong8521@gmail.com</webMaster>
-    <lastBuildDate>Tue, 26 Nov 2019 18:20:23 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 07 Nov 2019 22:50:34 +0900</lastBuildDate>
     
 	<atom:link href="https://yongju-jin.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Dagger With Codelab #2</title>
-      <link>https://yongju-jin.github.io/post/dagger_2/</link>
-      <pubDate>Tue, 26 Nov 2019 18:20:23 +0900</pubDate>
-      <author>yong8521@gmail.com</author>
-      <guid>https://yongju-jin.github.io/post/dagger_2/</guid>
-      <description>Dagger CodeLab을 하면서 공부한 내용을 요약, 정리
-1. Injecting the graph in an Activity 보통 Dagger 그래프는 Application 클래스 안에서 생성한다. 앱이 실행되는 동안 메모리에 그래프의 객체가 존재하길 원하기 때문이다. 이런 방법으로 그래프는 앱의 lifecycle에 종속되게 된다.
-open class MyApplication : Application() { // Instance of the AppComponent that will be used by all the Activities in the project  val appComponent: AppComponent by lazy { // Creates an instance of AppComponent using its Factory constructor  // We pass the applicationContext that will be used as Context in the graph  DaggerAppComponent.</description>
-    </item>
-    
-    <item>
-      <title>Dagger with Codelab #1</title>
-      <link>https://yongju-jin.github.io/post/dagger_1/</link>
-      <pubDate>Fri, 22 Nov 2019 00:09:03 +0900</pubDate>
-      <author>yong8521@gmail.com</author>
-      <guid>https://yongju-jin.github.io/post/dagger_1/</guid>
-      <description>Dagger CodeLab을 하면서 공부한 내용을 요약, 정리
-1. Dagger 설정 dependencies { def dagger_version = &amp;#34;2.25.2&amp;#34; implementation &amp;#34;com.google.dagger:dagger:$dagger_version&amp;#34; kapt &amp;#34;com.google.dagger:dagger-compiler:$dagger_version&amp;#34; } app/build.gradle에 위와 같이 dagger 관련 depency 설정을 추가.
-2. @Inject  In order to build the application graph automatically for us, Dagger needs to know how to create instances for the classes in the graph. One way to do this is by annotating the constructor of classes with @Inject.</description>
-    </item>
     
     <item>
       <title>[TIL-React] #1</title>
@@ -41,8 +19,8 @@ open class MyApplication : Application() { // Instance of the AppComponent that 
       <pubDate>Thu, 07 Nov 2019 22:50:34 +0900</pubDate>
       <author>yong8521@gmail.com</author>
       <guid>https://yongju-jin.github.io/post/react_1/</guid>
-      <description>component props 가져오기 var GreeterWord = React.createClass({ render: function () { var name = this.props.name; return ( &amp;lt;div&amp;gt; &amp;lt;h1&amp;gt; Hello React From GreeterWord {name} &amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt; this is form a component &amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; ); } }); ReactDOM.render( &amp;lt;GreeterWord name=&amp;#34;yongu&amp;#34;/&amp;gt;, document.getElementById(&amp;#39;app&amp;#39;) );  this.props.name으로 name에 접근해서 {name} 으로 사용
-Default Value var GreeterWord = React.createClass({ getDefaultProps: function () { return { name: &amp;#39;React&amp;#39;, }; }, render: function () {  Default 값을 설정할 때는 getDefaultPros를 설정</description>
+      <description>component props 가져오기 var GreeterWord = React.createClass({ render: function () { var name = this.props.name; return ( &amp;lt;div&amp;gt; &amp;lt;h1&amp;gt; Hello React From GreeterWord {name} &amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt; this is form a component &amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; ); } }); ReactDOM.render( &amp;lt;GreeterWord name=&amp;#34;yongu&amp;#34;/&amp;gt;, document.getElementById(&amp;#39;app&amp;#39;) ); this.props.name으로 name에 접근해서 {name} 으로 사용
+Default Value var GreeterWord = React.createClass({ getDefaultProps: function () { return { name: &amp;#39;React&amp;#39;, }; }, render: function () { Default 값을 설정할 때는 getDefaultPros를 설정</description>
     </item>
     
     <item>
@@ -52,7 +30,7 @@ Default Value var GreeterWord = React.createClass({ getDefaultProps: function ()
       <author>yong8521@gmail.com</author>
       <guid>https://yongju-jin.github.io/post/learn_coroutines_1/</guid>
       <description>스스로 공부한 코루틴에 대한 내용 정리.
-1. 특징 1. 비동기 프로그래밍을 쉽게 할 수 있도록 도와줌 아래 코드처럼 쉽게 비동기 수행을 작성할 수 있음.
+1. 특징  1. 비동기 프로그래밍을 쉽게 할 수 있도록 도와줌 아래 코드처럼 쉽게 비동기 수행을 작성할 수 있음.
 lauch { } async { } withContext { } 2. 쓰레드를 사용하는 것보다 가벼움 쓰레드, 코루틴을 1대1로 비교한다면 코루틴은 새로운 쓰레드를 생성하지 않기 때문에 쓰레드를 사용하는 것보단 비교적 가볍다.
 3. 일반적인 형태의 소스코도와 동일한 방식으로 코드 작성이 가능함 아래와 같이 일반적인 형태의 코드로 작성이 가능함.</description>
     </item>
@@ -63,14 +41,13 @@ lauch { } async { } withContext { } 2. 쓰레드를 사용하는 것보다 가�
       <pubDate>Fri, 30 Aug 2019 23:32:55 +0900</pubDate>
       <author>yong8521@gmail.com</author>
       <guid>https://yongju-jin.github.io/post/how_to_post_hugo/</guid>
-      <description> blog 폴더에서 아래 명령어를 실행하면
+      <description>blog 폴더에서 아래 명령어를 실행하면
 contents/post 아래에 입력한 파일 이름의 파일이 생성됨.
-hugo new post/how_to_new_post_using_hugo.md 새로 생성된 파일에서 글 작성.
- local server에서 확인.
-// 내용이 변경되면 local 에서 바로 변경내용을 확인 할 수 있음. hugo server -D github blog respository에 push
- 추가된 post를 gitub blog repository에 적용.
-hugo -d path github blog respository push
-  </description>
+ hugo new post/how_to_new_post_using_hugo.md    새로 생성된 파일에서 글 작성.
+  local server에서 확인.
+ // 내용이 변경되면 local 에서 바로 변경내용을 확인 할 수 있음. hugo server -D    github blog respository에 push
+  추가된 post를 gitub blog repository에 적용.
+ hugo -d path    github blog respository push</description>
     </item>
     
     <item>
@@ -81,8 +58,7 @@ hugo -d path github blog respository push
       <guid>https://yongju-jin.github.io/post/ubunt_software_1/</guid>
       <description>Unbuntu Software #1 - Tilix 기존에 mac을 사용하다가 새로 컴퓨터를 장만하게 되었는데,
 다음 두 가지 이유로 mac 을 포기하게 되었다.
- 가격
- 터치바  처음 mac을 살 떄도 리퍼비쉬로 200만원 정도의 가격에 구입했었던 거 같다. 다시 mac을 구입하려고 보니 mac의 가격은 200만원으로는 살 수 없었다.
+ 가격 터치바  처음 mac을 살 떄도 리퍼비쉬로 200만원 정도의 가격에 구입했었던 거 같다. 다시 mac을 구입하려고 보니 mac의 가격은 200만원으로는 살 수 없었다.
 그래서 대안을 찾던 중 Dell의 xps를 알게 되었고, 관심이 갔지만 xps 역시 비싼 가격에 포기하고 있었다. 그러던중 인스타 광고에서 xps 리퍼를 파는 곳을 보게 되었고, 정식 A/S 까지 받을 수 있다는 사실까지 확인해서 바로 지르게 되었다.</description>
     </item>
     
@@ -121,7 +97,7 @@ imageRes adapter는
       <author>yong8521@gmail.com</author>
       <guid>https://yongju-jin.github.io/post/rxbinding-toggle/</guid>
       <description>[RxBinding2] ToggleButton에서 on/off Observable 생성하기. toggle button 에서 on/off Observabel을 분리하기 위해서 아래와 같이 하면
-val obFuel1 = tb_fuel1.checkedChanges() obFuel1.filter { Log.d(TAG, &amp;#34;[whenFueLift] $it&amp;#34;) it }.subscribe { Log.d(TAG, &amp;#34;[whenFueLiftSub] $it&amp;#34;) } obFuel1.filter { Log.d(TAG, &amp;#34;[whenFueDown] $it&amp;#34;) !it }.subscribe { Log.d(TAG, &amp;#34;[whenFueDownSub] $it&amp;#34;) }D/FuelPump01: [whenFueLift] false D/FuelPump01: [whenFueDown] false D/FuelPump01: [whenFueDownSub] false D/FuelPump01: [whenFueDown] true D/FuelPump01: [whenFueDown] false D/FuelPump01: [whenFueDownSub] false 위와 같은 결과를 얻게 된다. 하나의 Observabe에 여러개의 subscriber가 붙을 수는 없다.</description>
+val obFuel1 = tb_fuel1.checkedChanges() obFuel1.filter { Log.d(TAG, &amp;#34;[whenFueLift] $it&amp;#34;) it }.subscribe { Log.d(TAG, &amp;#34;[whenFueLiftSub] $it&amp;#34;) } obFuel1.filter { Log.d(TAG, &amp;#34;[whenFueDown] $it&amp;#34;) !it }.subscribe { Log.d(TAG, &amp;#34;[whenFueDownSub] $it&amp;#34;) } D/FuelPump01: [whenFueLift] false D/FuelPump01: [whenFueDown] false D/FuelPump01: [whenFueDownSub] false D/FuelPump01: [whenFueDown] true D/FuelPump01: [whenFueDown] false D/FuelPump01: [whenFueDownSub] false 위와 같은 결과를 얻게 된다. 하나의 Observabe에 여러개의 subscriber가 붙을 수는 없다.</description>
     </item>
     
     <item>
@@ -142,7 +118,7 @@ val obFuel1 = tb_fuel1.checkedChanges() obFuel1.filter { Log.d(TAG, &amp;#34;[wh
       <guid>https://yongju-jin.github.io/post/frp-stream/</guid>
       <description>함수형 반응형 프로그래밍: FRP 입문자를 위한 종합 안내서.
 2장의 내용을 정리한 자료 입니다.
-2.FRP의 핵심 1. 스트림 타입: 이벤트의 흐름  이벤트의 흐름을 표현한다.
+ 2.FRP의 핵심 1. 스트림 타입: 이벤트의 흐름  이벤트의 흐름을 표현한다.
  책에서는 데이터의 흐름을 Cell, 이벤트의 흐름을 Stream이라고 표현하지만 다른 곳에서는 모두 데이트와 이벤트의 흐름을 모두 Strean이라고 말하고 두 가지를 분류하지 않음.
  Streams are cheap and ubiquitous, anything can be a stream: variables, user inputs, properties, caches, data structures. Rx에서 Observable이 아닐까?  example 1.</description>
     </item>
