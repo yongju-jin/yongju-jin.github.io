@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Rx - Tag - 전문 초보 개발자</title>
+        <link>https://yongju-jin.github.io/tags/rx/</link>
+        <description>Rx - Tag - 전문 초보 개발자</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>yong8521@gmail.com</managingEditor>
+            <webMaster>yong8521@gmail.com</webMaster><lastBuildDate>Sun, 12 Nov 2017 17:56:29 &#43;0900</lastBuildDate><atom:link href="https://yongju-jin.github.io/tags/rx/" rel="self" type="application/rss+xml" /><item>
+    <title>[RxBinding2] ToggleButton에서 on/off Observable 생성하기.</title>
+    <link>https://yongju-jin.github.io/posts/rxbinding-toggle/</link>
+    <pubDate>Sun, 12 Nov 2017 17:56:29 &#43;0900</pubDate>
+    <author>Author</author>
+    <guid>https://yongju-jin.github.io/posts/rxbinding-toggle/</guid>
+    <description><![CDATA[[RxBinding2] ToggleButton에서 on/off Observable 생성하기. toggle button 에서 on/off Observabel을 분리하기 위해서 아래와 같이 하면
+val obFuel1 = tb_fuel1.checkedChanges() obFuel1.filter { Log.d(TAG, &#34;[whenFueLift] $it&#34;) it }.subscribe { Log.d(TAG, &#34;[whenFueLiftSub] $it&#34;) } obFuel1.filter { Log.d(TAG, &#34;[whenFueDown] $it&#34;) !it }.subscribe { Log.d(TAG, &#34;[whenFueDownSub] $it&#34;) } D/FuelPump01: [whenFueLift] false D/FuelPump01: [whenFueDown] false D/FuelPump01: [whenFueDownSub] false D/FuelPump01: [whenFueDown] true D/FuelPump01: [whenFueDown] false D/FuelPump01: [whenFueDownSub] false 위와 같은 결과를 얻게 된다. 하나의 Observabe에 여러개의 subscriber가 붙을 수는 없다.]]></description>
+</item></channel>
+</rss>

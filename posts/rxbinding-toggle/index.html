@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>[RxBinding2] ToggleButton에서 on/off Observable 생성하기. - 전문 초보 개발자</title><meta name="Description" content="전문 초보 개발자의 기록"><meta property="og:title" content="[RxBinding2] ToggleButton에서 on/off Observable 생성하기." />
+<meta property="og:description" content="[RxBinding2] ToggleButton에서 on/off Observable 생성하기. toggle button 에서 on/off Observabel을 분리하기 위해서 아래와 같이 하면
+val obFuel1 = tb_fuel1.checkedChanges() obFuel1.filter { Log.d(TAG, &#34;[whenFueLift] $it&#34;) it }.subscribe { Log.d(TAG, &#34;[whenFueLiftSub] $it&#34;) } obFuel1.filter { Log.d(TAG, &#34;[whenFueDown] $it&#34;) !it }.subscribe { Log.d(TAG, &#34;[whenFueDownSub] $it&#34;) } D/FuelPump01: [whenFueLift] false D/FuelPump01: [whenFueDown] false D/FuelPump01: [whenFueDownSub] false D/FuelPump01: [whenFueDown] true D/FuelPump01: [whenFueDown] false D/FuelPump01: [whenFueDownSub] false 위와 같은 결과를 얻게 된다. 하나의 Observabe에 여러개의 subscriber가 붙을 수는 없다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yongju-jin.github.io/posts/rxbinding-toggle/" />
+<meta property="article:published_time" content="2017-11-12T17:56:29+09:00" />
+<meta property="article:modified_time" content="2017-11-12T17:56:29+09:00" /><meta property="og:site_name" content="전문 초보 개발자의 기록" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[RxBinding2] ToggleButton에서 on/off Observable 생성하기."/>
+<meta name="twitter:description" content="[RxBinding2] ToggleButton에서 on/off Observable 생성하기. toggle button 에서 on/off Observabel을 분리하기 위해서 아래와 같이 하면
+val obFuel1 = tb_fuel1.checkedChanges() obFuel1.filter { Log.d(TAG, &#34;[whenFueLift] $it&#34;) it }.subscribe { Log.d(TAG, &#34;[whenFueLiftSub] $it&#34;) } obFuel1.filter { Log.d(TAG, &#34;[whenFueDown] $it&#34;) !it }.subscribe { Log.d(TAG, &#34;[whenFueDownSub] $it&#34;) } D/FuelPump01: [whenFueLift] false D/FuelPump01: [whenFueDown] false D/FuelPump01: [whenFueDownSub] false D/FuelPump01: [whenFueDown] true D/FuelPump01: [whenFueDown] false D/FuelPump01: [whenFueDownSub] false 위와 같은 결과를 얻게 된다. 하나의 Observabe에 여러개의 subscriber가 붙을 수는 없다."/>
+<meta name="application-name" content="전문 초보 개발자의 기록">
+<meta name="apple-mobile-web-app-title" content="전문 초보 개발자의 기록"><link rel="icon" href="favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://yongju-jin.github.io/posts/rxbinding-toggle/" /><link rel="prev" href="https://yongju-jin.github.io/posts/book-review-mentor/" /><link rel="next" href="https://yongju-jin.github.io/posts/know-when-worked-1/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "[RxBinding2] ToggleButton에서 on/off Observable 생성하기.",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/yongju-jin.github.io\/posts\/rxbinding-toggle\/"
+        },"genre": "posts","keywords": "Rx, Android","wordcount":  206 ,
+        "url": "https:\/\/yongju-jin.github.io\/posts\/rxbinding-toggle\/","datePublished": "2017-11-12T17:56:29+09:00","dateModified": "2017-11-12T17:56:29+09:00","author": {
+                "@type": "Person",
+                "name": "Author"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="전문 초보 개발자">전문 초보 개발자</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts"> Posts </a><a class="menu-item" href="/about"> About </a><a class="menu-item" href="/tags"> Tags </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="전문 초보 개발자">전문 초보 개발자</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts" title="">Posts</a><a class="menu-item" href="/about" title="">About</a><a class="menu-item" href="/tags" title="">Tags</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">[RxBinding2] ToggleButton에서 on/off Observable 생성하기.</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Author</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2017-11-12>2017-11-12</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;about 206 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;1 min&nbsp;</div>
+        </div><div class="details toc" id="toc-static">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#참조-link"><em>참조 link</em></a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="rxbinding2-togglebutton에서-onoff-observable-생성하기">[RxBinding2] ToggleButton에서 on/off Observable 생성하기.</h1>
+<p>toggle button 에서 on/off Observabel을 분리하기 위해서 아래와 같이 하면</p>
+<div class="highlight"><pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">val</span> <span class="py">obFuel1</span> <span class="p">=</span> <span class="n">tb_fuel1</span><span class="p">.</span><span class="n">checkedChanges</span><span class="p">()</span>
+<span class="n">obFuel1</span><span class="p">.</span><span class="n">filter</span> <span class="p">{</span>
+  <span class="n">Log</span><span class="p">.</span><span class="n">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">&#34;[whenFueLift] $it&#34;</span><span class="p">)</span>
+  <span class="n">it</span>
+<span class="p">}.</span><span class="n">subscribe</span> <span class="p">{</span>
+  <span class="n">Log</span><span class="p">.</span><span class="n">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">&#34;[whenFueLiftSub] $it&#34;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">obFuel1</span><span class="p">.</span><span class="n">filter</span> <span class="p">{</span>
+  <span class="n">Log</span><span class="p">.</span><span class="n">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">&#34;[whenFueDown] $it&#34;</span><span class="p">)</span>
+  <span class="p">!</span><span class="n">it</span>
+<span class="p">}.</span><span class="n">subscribe</span> <span class="p">{</span>
+  <span class="n">Log</span><span class="p">.</span><span class="n">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">&#34;[whenFueDownSub] $it&#34;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div><pre><code class="language-log" data-lang="log">D/FuelPump01: [whenFueLift] false
+D/FuelPump01: [whenFueDown] false
+D/FuelPump01: [whenFueDownSub] false
+D/FuelPump01: [whenFueDown] true
+D/FuelPump01: [whenFueDown] false
+D/FuelPump01: [whenFueDownSub] false
+</code></pre><p>위와 같은 결과를 얻게 된다.
+하나의 Observabe에 여러개의 subscriber가 붙을 수는 없다. 나중에 subscriber가 등록된다면 먼저 등록된 subscriber로는 data가 전달이 되지 않는다.</p>
+<div class="highlight"><pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">val</span> <span class="py">obFuel1</span> <span class="p">=</span> <span class="n">tb_fuel1</span><span class="p">.</span><span class="n">checkedChanges</span><span class="p">().</span><span class="n">share</span><span class="p">()</span>
+<span class="n">obFuel1</span><span class="p">.</span><span class="n">filter</span> <span class="p">{</span>
+  <span class="n">Log</span><span class="p">.</span><span class="n">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">&#34;[whenFueLift] $it&#34;</span><span class="p">)</span>
+  <span class="n">it</span>
+<span class="p">}.</span><span class="n">subscribe</span> <span class="p">{</span>
+  <span class="n">Log</span><span class="p">.</span><span class="n">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">&#34;[whenFueLiftSub] $it&#34;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">obFuel1</span><span class="p">.</span><span class="n">filter</span> <span class="p">{</span>
+  <span class="n">Log</span><span class="p">.</span><span class="n">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">&#34;[whenFueDown] $it&#34;</span><span class="p">)</span>
+  <span class="p">!</span><span class="n">it</span>
+<span class="p">}.</span><span class="n">subscribe</span> <span class="p">{</span>
+  <span class="n">Log</span><span class="p">.</span><span class="n">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">&#34;[whenFueDownSub] $it&#34;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div><p>이런 경우는 위 코드처럼 <code>share()</code> 를 사용하면 된다.</p>
+<pre><code class="language-log" data-lang="log">D/FuelPump01: [whenFueLift] true
+D/FuelPump01: [whenFueLiftSub] true
+D/FuelPump01: [whenFueDown] true
+D/FuelPump01: [whenFueLift] false
+D/FuelPump01: [whenFueDown] false
+D/FuelPump01: [whenFueDownSub] false
+</code></pre><p>위 로그처럼 on/off obsevable을 생성할 수 있다.
+아래 내용은 <code>share()</code> 에 대한 java doc 내용이다.</p>
+<pre><code class="language-doc" data-lang="doc">Returns a new Observable that multicasts (shares) the original Observable. 
+As long as there is at least one Subscriber this Observable will be subscribed and emitting data. 
+When all subscribers have unsubscribed it will unsubscribe from the source Observable.
+This is an alias for publish().ConnectableObservable.refCount().
+</code></pre><h2 id="참조-link"><em>참조 link</em></h2>
+<p><a href="http://reactivex.io/RxJava/javadoc/rx/Observable.html#share--" target="_blank" rel="noopener noreffer">share()</a></p>
+<p><a href="https://blog.mindorks.com/how-to-use-rxjava-share-operator-26b08973771a" target="_blank" rel="noopener noreffer">How to user RXjava share() operator?</a></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>The article was updated on 2017-11-12</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/rx/">Rx</a>,&nbsp;<a href="/tags/android/">android</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/book-review-mentor/" class="prev" rel="prev" title="프로그래머의 길, 멘토에게 묻다"><i class="fas fa-angle-left fa-fw"></i>프로그래머의 길, 멘토에게 묻다</a>
+            <a href="/posts/know-when-worked-1/" class="next" rel="next" title="하면서 배운것들 #1">하면서 배운것들 #1<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.8"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

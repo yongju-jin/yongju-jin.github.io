@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>react - Tag - 전문 초보 개발자</title>
+        <link>https://yongju-jin.github.io/tags/react/</link>
+        <description>react - Tag - 전문 초보 개발자</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>yong8521@gmail.com</managingEditor>
+            <webMaster>yong8521@gmail.com</webMaster><lastBuildDate>Thu, 07 Nov 2019 22:50:34 &#43;0900</lastBuildDate><atom:link href="https://yongju-jin.github.io/tags/react/" rel="self" type="application/rss+xml" /><item>
+    <title>[TIL-React] #1</title>
+    <link>https://yongju-jin.github.io/posts/react_1/</link>
+    <pubDate>Thu, 07 Nov 2019 22:50:34 &#43;0900</pubDate>
+    <author>Author</author>
+    <guid>https://yongju-jin.github.io/posts/react_1/</guid>
+    <description><![CDATA[component props 가져오기 var GreeterWord = React.createClass({ render: function () { var name = this.props.name; return ( &lt;div&gt; &lt;h1&gt; Hello React From GreeterWord {name} &lt;/h1&gt; &lt;p&gt; this is form a component &lt;/p&gt; &lt;/div&gt; ); } }); ReactDOM.render( &lt;GreeterWord name=&#34;yongu&#34;/&gt;, document.getElementById(&#39;app&#39;) ); this.props.name으로 name에 접근해서 {name} 으로 사용
+Default Value var GreeterWord = React.createClass({ getDefaultProps: function () { return { name: &#39;React&#39;, }; }, render: function () { Default 값을 설정할 때는 getDefaultPros를 설정]]></description>
+</item></channel>
+</rss>
